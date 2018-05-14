@@ -1,0 +1,211 @@
+-- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
+--
+-- Host: localhost    Database: rahmat_casting_center
+-- ------------------------------------------------------
+-- Server version	5.7.13-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `rahmat_casting_center`
+--
+
+/*!40000 DROP DATABASE IF EXISTS `rahmat_casting_center`*/;
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `rahmat_casting_center` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `rahmat_casting_center`;
+
+--
+-- Table structure for table `accountdetails`
+--
+
+DROP TABLE IF EXISTS `accountdetails`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `accountdetails` (
+  `TDetailNo` int(11) NOT NULL AUTO_INCREMENT,
+  `AccountID` int(11) NOT NULL,
+  `SerialNo` int(11) NOT NULL,
+  `DateIN` varchar(45) NOT NULL,
+  `TimeIN` varchar(45) NOT NULL,
+  `Rati` varchar(45) NOT NULL,
+  `Labour` int(11) NOT NULL,
+  `L_Money_In_Debt` int(11) NOT NULL,
+  `Total_Money` int(11) NOT NULL,
+  `CurrentGivenMoney` int(11) NOT NULL,
+  `Total_Money_In_Debt` int(11) NOT NULL,
+  `Casting` varchar(45) NOT NULL,
+  `Waist` varchar(45) NOT NULL,
+  `Total_Casting` varchar(45) NOT NULL,
+  `Impurity` varchar(45) NOT NULL,
+  `PureGold` varchar(45) NOT NULL,
+  `AdvanceGivenGold` varchar(45) NOT NULL,
+  `Subtotal_Gold` varchar(45) NOT NULL,
+  `L_Gold_In_Debt` varchar(45) NOT NULL,
+  `Total_Gold` varchar(45) NOT NULL,
+  `CurrentGivenGold` varchar(45) NOT NULL,
+  `Total_Gold_In_Debt` varchar(45) NOT NULL,
+  `image` longblob,
+  `image1` longblob,
+  PRIMARY KEY (`TDetailNo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `accounts`
+--
+
+DROP TABLE IF EXISTS `accounts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `accounts` (
+  `AccountID` int(11) NOT NULL AUTO_INCREMENT,
+  `Firstname` text CHARACTER SET utf8 NOT NULL,
+  `Lastname` text CHARACTER SET utf8 NOT NULL,
+  `ContactNo` bigint(20) NOT NULL,
+  `ShopNo` bigint(20) NOT NULL,
+  `Waist` double NOT NULL,
+  `Labour` int(11) NOT NULL,
+  `Area` text CHARACTER SET utf8 NOT NULL,
+  `City` text CHARACTER SET utf8 NOT NULL,
+  `Gold_Debt` double NOT NULL,
+  `Money_Debt` bigint(20) NOT NULL,
+  `DateIN` text,
+  PRIMARY KEY (`AccountID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `caccountdetails`
+--
+
+DROP TABLE IF EXISTS `caccountdetails`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `caccountdetails` (
+  `TDetailNo` int(11) NOT NULL AUTO_INCREMENT,
+  `AccountID` varchar(45) NOT NULL,
+  `SerialNo` int(11) NOT NULL,
+  `Name` varchar(45) NOT NULL,
+  `DateIN` varchar(45) NOT NULL,
+  `TimeIN` varchar(45) NOT NULL,
+  `GoldRate` int(11) NOT NULL,
+  `GoldPrice` int(11) NOT NULL,
+  `Rati` int(11) NOT NULL,
+  `Labour` int(11) NOT NULL,
+  `L_Money_In_Debt` int(11) NOT NULL,
+  `Total_Money` int(11) NOT NULL,
+  `CurrentGivenMoney` int(11) NOT NULL,
+  `Total_Money_In_Debt` int(11) NOT NULL,
+  `Casting` varchar(45) NOT NULL,
+  `Waist` varchar(45) NOT NULL,
+  `Total_Casting` varchar(45) NOT NULL,
+  `Impurity` varchar(45) NOT NULL,
+  `PureGold` varchar(45) NOT NULL,
+  `AdvanceGivenGold` varchar(45) NOT NULL,
+  `Subtotal_Gold` varchar(45) NOT NULL,
+  `L_Gold_In_Debt` varchar(45) NOT NULL,
+  `Total_Gold` varchar(45) NOT NULL,
+  `CurrentGivenGold` varchar(45) NOT NULL,
+  `Total_Gold_In_Debt` varchar(45) NOT NULL,
+  `image` longblob,
+  `image1` longblob,
+  PRIMARY KEY (`TDetailNo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `cash_account`
+--
+
+DROP TABLE IF EXISTS `cash_account`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cash_account` (
+  `AccountID` int(11) NOT NULL AUTO_INCREMENT,
+  `AccountName` varchar(45) NOT NULL,
+  `Waist` varchar(45) NOT NULL,
+  `Labour` varchar(45) NOT NULL,
+  `Rati` varchar(45) NOT NULL,
+  `Description` text NOT NULL,
+  PRIMARY KEY (`AccountID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `casting`
+--
+
+DROP TABLE IF EXISTS `casting`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `casting` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `DateIN` varchar(45) NOT NULL,
+  `CurrentCasting` double NOT NULL,
+  `CastingCame` double NOT NULL,
+  `SaleCasting` double NOT NULL,
+  `Balance` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `debtin`
+--
+
+DROP TABLE IF EXISTS `debtin`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `debtin` (
+  `TDetailNo` int(11) NOT NULL AUTO_INCREMENT,
+  `AccountID` int(11) NOT NULL,
+  `Name` text NOT NULL,
+  `LastGoldDebt` double NOT NULL,
+  `LastMoneyDebt` int(11) NOT NULL,
+  `NewGoldDebt` double NOT NULL,
+  `NewMoneyDebt` int(11) NOT NULL,
+  `DateIN` text NOT NULL,
+  `TimeIN` text NOT NULL,
+  `GivenGold` double NOT NULL,
+  `GivenMoney` int(11) NOT NULL,
+  PRIMARY KEY (`TDetailNo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `setting`
+--
+
+DROP TABLE IF EXISTS `setting`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `setting` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Gold_Rate` varchar(45) NOT NULL,
+  `digit` varchar(45) NOT NULL,
+  `msg` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-03-27 17:48:16
