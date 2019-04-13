@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
-
+using System.Globalization;
 namespace Rahmat_Casting_Center
 {
     public partial class frmPrint : Form
@@ -17,7 +17,7 @@ namespace Rahmat_Casting_Center
         String acc = "";
         String ser = "";
         String ans = "";
-
+        bool printing;
         public frmPrint(String a, String s,String an)
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace Rahmat_Casting_Center
         {
             try
             {
-                SQLConn.sqL = "SELECT TDetailNo,CONCAT(Firstname, ' ', Lastname)as Name,adacc.AccountID,SerialNo,adacc.DateIN,TimeIN,Rati,adacc.Labour,L_Money_In_Debt,Total_Money,CurrentGivenMoney,Total_Money_In_Debt,Casting,adacc.Waist,Total_Casting,Impurity,PureGold,AdvanceGivenGold,Subtotal_Gold,L_Gold_In_Debt,Total_Gold,CurrentGivenGold,Total_Gold_In_Debt FROM accountdetails AS adacc,accounts AS acc WHERE adacc.AccountID='"+ acc +"'AND SerialNo='"+ser +"'   ";
+                SQLConn.sqL = "SELECT TDetailNo,CONCAT(Firstname, ' ', Lastname)as Name,acc.AccountID,adacc.AccountID,SerialNo,adacc.DateIN,TimeIN,Rati,adacc.Labour,L_Money_In_Debt,Total_Money,CurrentGivenMoney,Total_Money_In_Debt,Casting,adacc.Waist,Total_Casting,Impurity,PureGold,AdvanceGivenGold,Subtotal_Gold,L_Gold_In_Debt,Total_Gold,CurrentGivenGold,Total_Gold_In_Debt FROM accountdetails AS adacc,accounts AS acc WHERE acc.AccountID = adacc.AccountID AND adacc.AccountID='" + acc +"'AND SerialNo='"+ser +"'   ";
                 SQLConn.ConnDB();
                 SQLConn.cmd = new MySqlCommand(SQLConn.sqL, SQLConn.conn);
                 SQLConn.dr = SQLConn.cmd.ExecuteReader();
@@ -46,16 +46,16 @@ namespace Rahmat_Casting_Center
                     lblSerial.Text = SQLConn.dr["SerialNo"].ToString();
                     lblSerial1.Text = SQLConn.dr["SerialNo"].ToString();
 
-                     
-                    lblDate.Text = SQLConn.dr["DateIN"].ToString();
-
-                    lblDate1.Text = SQLConn.dr["DateIN"].ToString();
-
-
-                    DateTime xyz = Convert.ToDateTime(SQLConn.dr["TimeIN"]);
+                    string chang = SQLConn.dr["DateIN"].ToString();
+                    DateTime dt = DateTime.ParseExact(chang, "MM-dd-yyyy", CultureInfo.InvariantCulture);
+  
+                    lblDate.Text = dt.ToString("dd-MMM-yyyy");
+                    lblDate1.Text = dt.ToString("dd-MMM-yyyy");
                     
-                    lblTime.Text = xyz.ToString("hh:mm");
-                    lblTime1.Text = xyz.ToString("hh:mm");
+
+                   
+                    lblTime.Text = SQLConn.dr["TimeIN"].ToString();
+                    lblTime1.Text = SQLConn.dr["TimeIN"].ToString();
 
                     lblRati.Text = SQLConn.dr["Rati"].ToString();
                     lblRati1.Text = SQLConn.dr["Rati"].ToString();
@@ -100,10 +100,15 @@ namespace Rahmat_Casting_Center
 
                     lblRate.Text = "";
                     lblPrice.Text = "";
+
+                    printing = true;
+
                     }
                 else
                 {
-                    MessageBox.Show("Error.");
+                    MessageBox.Show("Not Found.");
+                    printing = false;
+                    return;
                 }
             }
 
@@ -139,8 +144,11 @@ namespace Rahmat_Casting_Center
                     lblSerial.Text = SQLConn.dr["SerialNo"].ToString();
                     lblSerial1.Text = SQLConn.dr["SerialNo"].ToString();
 
-                    lblDate.Text = SQLConn.dr["DateIN"].ToString();
-                    lblDate1.Text = SQLConn.dr["DateIN"].ToString();
+                    string chang = SQLConn.dr["DateIN"].ToString();
+                    DateTime dt = DateTime.ParseExact(chang, "MM-dd-yyyy", CultureInfo.InvariantCulture);
+
+                    lblDate.Text = dt.ToString("dd-MMM-yyyy");
+                    lblDate1.Text = dt.ToString("dd-MMM-yyyy");
 
                     lblTime.Text = SQLConn.dr["TimeIN"].ToString();
                     lblTime1.Text = SQLConn.dr["TimeIN"].ToString();
@@ -189,10 +197,15 @@ namespace Rahmat_Casting_Center
                     lblTGD.Text = String.Format(SQLConn.dr["Total_Gold_In_Debt"].ToString(), "#,###0.000");
                     lblTGD1.Text = String.Format(SQLConn.dr["Total_Gold_In_Debt"].ToString(), "#,###0.000");
 
+                    type.Text = "Cash";
+                    printing = true;
+
                 }
                 else
                 {
-                    MessageBox.Show("Error.");
+                    MessageBox.Show("Not Found.");
+                    printing = false;
+                    return;
                 }
             }
 
@@ -210,6 +223,8 @@ namespace Rahmat_Casting_Center
 
         private void frmPrint_Load(object sender, EventArgs e)
         {
+            printing = false;
+
             label25.Text = "";
             if (ans == "Single")
             {
@@ -219,8 +234,16 @@ namespace Rahmat_Casting_Center
             {
                 LoadCash();
             }
-            GetMessage();
-            PrintDocument1.Print();
+
+            if (printing == true)
+            {
+                GetMessage();
+                PrintDocument1.Print();
+            }
+            if (System.Windows.Forms.Application.OpenForms["frmBill"] != null)
+            {
+                (System.Windows.Forms.Application.OpenForms["frmBill"] as frmBill).SetFocusonExit();
+            }
             this.Close();
         
         }
@@ -252,6 +275,8 @@ namespace Rahmat_Casting_Center
                 SQLConn.conn.Close();
             }
         }
+
+
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             Bitmap bm = new Bitmap(this.Panel1.Width, this.Panel1.Height);
@@ -260,6 +285,11 @@ namespace Rahmat_Casting_Center
 
             PageSetupDialog aPS = new PageSetupDialog();
             aPS.Document = PrintDocument1;
+        }
+
+        private void lblTime_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

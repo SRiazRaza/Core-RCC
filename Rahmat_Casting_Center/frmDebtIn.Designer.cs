@@ -261,7 +261,7 @@
             this.GroupBox1.Size = new System.Drawing.Size(642, 299);
             this.GroupBox1.TabIndex = 16;
             this.GroupBox1.TabStop = false;
-            this.GroupBox1.Text = "Stock-In Information";
+            this.GroupBox1.Text = "Debt-In Information";
             // 
             // txtMoney_Debt
             // 

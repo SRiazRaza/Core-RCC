@@ -49,11 +49,12 @@ namespace Rahmat_Casting_Center
                 SQLConn.ConnDB();
                 SQLConn.cmd = new MySqlCommand(SQLConn.sqL, SQLConn.conn);
                 SQLConn.cmd.ExecuteNonQuery();
-                Interaction.MsgBox("New Account successfully added.", MsgBoxStyle.Information, "Add Account");
+        //        Interaction.MsgBox("New Account successfully added.", MsgBoxStyle.Information, "Add Account");
             }
             catch (Exception ex)
             {
-                Interaction.MsgBox(ex.ToString());
+
+                MessageBox.Show(ex.Message.ToString());
             }
             finally
             {
@@ -72,12 +73,12 @@ namespace Rahmat_Casting_Center
                 SQLConn.ConnDB();
                 SQLConn.cmd = new MySqlCommand(SQLConn.sqL, SQLConn.conn);
                 SQLConn.cmd.ExecuteNonQuery();
-                Interaction.MsgBox("Account record successfully updated", MsgBoxStyle.Information, "Update Account");
+              //  Interaction.MsgBox("Account record successfully updated", MsgBoxStyle.Information, "Update Account");
 
             }
             catch (Exception ex)
             {
-                Interaction.MsgBox(ex.ToString());
+                MessageBox.Show(ex.Message.ToString());
             }
             finally
             {
@@ -225,10 +226,10 @@ namespace Rahmat_Casting_Center
             txtCity.Text = "";
             txtShopNo.Text = "";
             txtContractNo.Text = "";
-            txt_money.Text = "";
-            txt_gold.Text = "";
-            txt_labour.Text = "";
-            txt_waist.Text = "";
+            txt_money.Text = "0";
+            txt_gold.Text = "0.000";
+            txt_labour.Text = "0";
+            txt_waist.Text = "0.000";
         }
 
 

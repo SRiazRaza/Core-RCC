@@ -39,20 +39,20 @@ namespace Rahmat_Casting_Center
         {
             try
             {
-
+       
                 if (find == "")
                 {
-                    SQLConn.sqL = "SELECT TDetailNo, AccountID,Name,SerialNo,DateIN,TimeIN,GoldRate,GoldPrice,Rati,Labour,L_Money_In_Debt,Total_Money,CurrentGivenMoney,Total_Money_In_Debt,Casting,Waist,Total_Casting,Impurity,PureGold,AdvanceGivenGold,Subtotal_Gold,L_Gold_In_Debt,Total_Gold,CurrentGivenGold,Total_Gold_In_Debt from caccountdetails where DateIN BETWEEN '" + StartDate.ToString("MM-dd-yyyy") + "' AND '" + EndDate.ToString("MM-dd-yyyy") + "'   GROUP BY TDetailNo,AccountID ORDER BY DateIN";
+                    SQLConn.sqL = "SELECT TDetailNo, AccountID,Name,SerialNo,DateIN,TimeIN,GoldRate,GoldPrice,Rati,Labour,L_Money_In_Debt,Total_Money,CurrentGivenMoney,Total_Money_In_Debt,Casting,Waist,Total_Casting,Impurity,PureGold,AdvanceGivenGold,Subtotal_Gold,L_Gold_In_Debt,Total_Gold,CurrentGivenGold,Total_Gold_In_Debt from caccountdetails where  DATE_FORMAT(STR_TO_DATE(DateIN, '%m-%d-%Y'), '%Y-%m-%d') BETWEEN '" + StartDate.ToString("yyyy-MM-dd") + "' AND '" + EndDate.ToString("yyyy-MM-dd") + "'   GROUP BY TDetailNo,AccountID ORDER BY DateIN";
                    
                 }
                 else {
-                    SQLConn.sqL = "SELECT TDetailNo, AccountID,Name,SerialNo,DateIN,TimeIN,GoldRate,GoldPrice,Rati,Labour,L_Money_In_Debt,Total_Money,CurrentGivenMoney,Total_Money_In_Debt,Casting,Waist,Total_Casting,Impurity,PureGold,AdvanceGivenGold,Subtotal_Gold,L_Gold_In_Debt,Total_Gold,CurrentGivenGold,Total_Gold_In_Debt from caccountdetails where AccountID='" + find+"' AND DateIN BETWEEN '" + StartDate.ToString("MM-dd-yyyy") + "' AND '" + EndDate.ToString("MM-dd-yyyy") + "'   GROUP BY TDetailNo,AccountID ORDER BY DateIN";
+                    SQLConn.sqL = "SELECT TDetailNo, AccountID,Name,SerialNo,DateIN,TimeIN,GoldRate,GoldPrice,Rati,Labour,L_Money_In_Debt,Total_Money,CurrentGivenMoney,Total_Money_In_Debt,Casting,Waist,Total_Casting,Impurity,PureGold,AdvanceGivenGold,Subtotal_Gold,L_Gold_In_Debt,Total_Gold,CurrentGivenGold,Total_Gold_In_Debt from caccountdetails where AccountID='" + find+ "' AND DATE_FORMAT(STR_TO_DATE(DateIN, '%m-%d-%Y'), '%Y-%m-%d') BETWEEN '" + StartDate.ToString("yyyy-MM-dd") + "' AND '" + EndDate.ToString("yyyy-MM-dd") + "'   GROUP BY TDetailNo,AccountID ORDER BY DateIN";
                 }
                 SQLConn.ConnDB();
                 SQLConn.cmd = new MySqlCommand(SQLConn.sqL, SQLConn.conn);
                 SQLConn.da = new MySqlDataAdapter(SQLConn.cmd);
 
-                this.rahmat_casting_centerDataSet.caccountdetails.Clear();
+                    this.rahmat_casting_centerDataSet.caccountdetails.Clear();
                 SQLConn.da.Fill(this.rahmat_casting_centerDataSet.caccountdetails);
 
 

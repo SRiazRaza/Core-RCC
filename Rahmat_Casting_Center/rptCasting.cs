@@ -31,7 +31,7 @@ namespace Rahmat_Casting_Center
             try
             {
 
-                SQLConn.sqL = "SELECT * from casting where DateIN BETWEEN '" + StartDate.ToString("MM-dd-yyyy") + "' AND '" + EndDate.ToString("MM-dd-yyyy") + "'  ORDER BY DateIN";
+                SQLConn.sqL = "SELECT * from casting where DATE_FORMAT(STR_TO_DATE(DateIN, '%m-%d-%Y'), '%Y-%m-%d') BETWEEN '" + StartDate.ToString("yyyy-MM-dd") + "' AND '" + EndDate.ToString("yyyy-MM-dd") + "'  ORDER BY DateIN";
                 SQLConn.ConnDB();
                 SQLConn.cmd = new MySqlCommand(SQLConn.sqL, SQLConn.conn);
                 SQLConn.da = new MySqlDataAdapter(SQLConn.cmd);

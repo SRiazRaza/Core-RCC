@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
-
+using System.IO;
 namespace Rahmat_Casting_Center
 {
     public partial class frmSetting : Form
@@ -94,11 +94,11 @@ namespace Rahmat_Casting_Center
                 {
                     if (isAdding == true)
                     {
-                        Interaction.MsgBox("Information Successfully Added", MsgBoxStyle.Information, "Adding Information");
+                     //   Interaction.MsgBox("Information Successfully Added", MsgBoxStyle.Information, "Adding Information");
                     }
                     else
                     {
-                        Interaction.MsgBox("Information Successfully Updated", MsgBoxStyle.Information, "Editing Information");
+                     //   Interaction.MsgBox("Information Successfully Updated", MsgBoxStyle.Information, "Editing Information");
                     }
                 }
                 else
@@ -173,10 +173,85 @@ namespace Rahmat_Casting_Center
          
         }
 
-       // private void button1_Click(object sender, EventArgs e)
-       // {
-         //   frmpicture_form abc = new frmpicture_form("", "", "");
-          //  abc.ShowDialog();
-    //    }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Stream myS = null;
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "BackUp File (*.sql)|*.sql";
+            saveFileDialog1.RestoreDirectory = true;
+            try
+            {
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+
+                    if ((myS = saveFileDialog1.OpenFile()) != null)
+                    {
+
+                        SQLConn.ConnDB();
+                        SQLConn.cmd = new MySqlCommand(SQLConn.sqL, SQLConn.conn);
+                        MySqlBackup mb = new MySqlBackup(SQLConn.cmd);
+                        string file = Path.GetFullPath(saveFileDialog1.FileName);
+                        myS.Close();
+
+
+                        mb.ExportInfo.AddCreateDatabase = true;
+                        List<string> abc = new List<string>();
+                        abc.Add("accountdetails");
+                        abc.Add("caccountdetails");
+                        abc.Add("casting");
+                        abc.Add("debtin");
+                        abc.Add("setting");
+                        mb.ExportInfo.TablesToBeExportedList = abc;
+                        mb.ExportInfo.ExportTableStructure = true;
+                        mb.ExportInfo.ExportRows = true;
+                        mb.ExportToFile(file);
+                        MessageBox.Show("BackUp Successfully Completed.");
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("BackUp UnSuccessfull. " + ex);
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog theDialog = new OpenFileDialog();
+                theDialog.Title = "Open Text File";
+                theDialog.Filter = "BackUp File (*.sql)|*.sql";
+                if (theDialog.ShowDialog() == DialogResult.OK)
+                {
+
+                    string file = Path.GetFullPath(theDialog.FileName);
+                    SQLConn.ConnDB();
+                    SQLConn.cmd = new MySqlCommand(SQLConn.sqL, SQLConn.conn);
+                    MySqlBackup mb = new MySqlBackup(SQLConn.cmd);
+                    mb.ImportInfo.TargetDatabase = "rahmat_casting_center";
+                    mb.ImportInfo.DatabaseDefaultCharSet = "utf8";
+                    mb.ImportFromFile(file);
+
+                    MessageBox.Show("Restoring Successfully Completed.");
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Restroring UnSuccessfull. " + ex);
+            }
+
+        }
+
+        // private void button1_Click(object sender, EventArgs e)
+        // {
+        //   frmpicture_form abc = new frmpicture_form("", "", "");
+        //  abc.ShowDialog();
+        //    }
     }
 }

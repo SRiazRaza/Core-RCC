@@ -49,6 +49,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Label3 = new System.Windows.Forms.Label();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtShopNo = new System.Windows.Forms.MaskedTextBox();
             this.txtContractNo = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -60,7 +61,6 @@
             this.txt_labour = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_waist = new System.Windows.Forms.TextBox();
-            this.txtShopNo = new System.Windows.Forms.MaskedTextBox();
             this.GroupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -123,6 +123,7 @@
             this.button4.BackColor = System.Drawing.Color.White;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -295,6 +296,16 @@
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Account Information";
             // 
+            // txtShopNo
+            // 
+            this.txtShopNo.BeepOnError = true;
+            this.txtShopNo.Location = new System.Drawing.Point(459, 191);
+            this.txtShopNo.Mask = "00000000000";
+            this.txtShopNo.Name = "txtShopNo";
+            this.txtShopNo.Size = new System.Drawing.Size(136, 23);
+            this.txtShopNo.TabIndex = 7;
+            this.txtShopNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // txtContractNo
             // 
             this.txtContractNo.BeepOnError = true;
@@ -350,6 +361,7 @@
             this.txt_money.Name = "txt_money";
             this.txt_money.Size = new System.Drawing.Size(105, 23);
             this.txt_money.TabIndex = 11;
+            this.txt_money.Text = "0";
             // 
             // label7
             // 
@@ -367,6 +379,7 @@
             this.txt_gold.Name = "txt_gold";
             this.txt_gold.Size = new System.Drawing.Size(105, 23);
             this.txt_gold.TabIndex = 10;
+            this.txt_gold.Text = "0.000";
             // 
             // label20
             // 
@@ -384,6 +397,7 @@
             this.txt_labour.Name = "txt_labour";
             this.txt_labour.Size = new System.Drawing.Size(123, 23);
             this.txt_labour.TabIndex = 9;
+            this.txt_labour.Text = "0";
             // 
             // label9
             // 
@@ -401,22 +415,14 @@
             this.txt_waist.Name = "txt_waist";
             this.txt_waist.Size = new System.Drawing.Size(123, 23);
             this.txt_waist.TabIndex = 8;
-            // 
-            // txtShopNo
-            // 
-            this.txtShopNo.BeepOnError = true;
-            this.txtShopNo.Location = new System.Drawing.Point(459, 191);
-            this.txtShopNo.Mask = "00000000000";
-            this.txtShopNo.Name = "txtShopNo";
-            this.txtShopNo.Size = new System.Drawing.Size(136, 23);
-            this.txtShopNo.TabIndex = 7;
-            this.txtShopNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_waist.Text = "0.000";
             // 
             // frmAddEditAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.CancelButton = this.button4;
             this.ClientSize = new System.Drawing.Size(868, 652);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);

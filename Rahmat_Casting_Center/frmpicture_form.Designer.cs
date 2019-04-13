@@ -36,7 +36,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cameraControl2 = new DevExpress.XtraEditors.Camera.CameraControl();
+            this.ArticleCamera = new DevExpress.XtraEditors.Camera.CameraControl();
             this.cameraControl1 = new DevExpress.XtraEditors.Camera.CameraControl();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -137,7 +137,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.cameraControl2);
+            this.panel1.Controls.Add(this.ArticleCamera);
             this.panel1.Controls.Add(this.cameraControl1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -148,14 +148,15 @@
             this.panel1.Size = new System.Drawing.Size(667, 486);
             this.panel1.TabIndex = 92;
             // 
-            // cameraControl2
+            // ArticleCamera
             // 
-            this.cameraControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.cameraControl2.Location = new System.Drawing.Point(37, 252);
-            this.cameraControl2.Name = "cameraControl2";
-            this.cameraControl2.Size = new System.Drawing.Size(270, 200);
-            this.cameraControl2.TabIndex = 17;
-            this.cameraControl2.Text = "cameraControl2";
+            this.ArticleCamera.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.ArticleCamera.DeviceNotFoundString = "Device Not Found.";
+            this.ArticleCamera.Location = new System.Drawing.Point(37, 252);
+            this.ArticleCamera.Name = "ArticleCamera";
+            this.ArticleCamera.Size = new System.Drawing.Size(270, 200);
+            this.ArticleCamera.TabIndex = 17;
+            this.ArticleCamera.Text = "cameraControl2";
             // 
             // cameraControl1
             // 
@@ -247,7 +248,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private DevExpress.XtraEditors.Camera.CameraControl cameraControl2;
-        private DevExpress.XtraEditors.Camera.CameraControl cameraControl1;
+        internal DevExpress.XtraEditors.Camera.CameraControl ArticleCamera;
+        internal DevExpress.XtraEditors.Camera.CameraControl cameraControl1;
     }
 }

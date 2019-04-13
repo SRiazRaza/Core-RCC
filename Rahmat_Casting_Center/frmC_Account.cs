@@ -51,6 +51,7 @@ namespace Rahmat_Casting_Center
                     SQLConn.adding = false;
                     SQLConn.updating = true;
                     staffID = Convert.ToInt32(ListView1.FocusedItem.Text);
+                    ListView1.FocusedItem.Focused = false;
                     frmAddEditC_Account f2 = new frmAddEditC_Account(staffID);
                     f2.ShowDialog();
                 }
@@ -113,6 +114,12 @@ namespace Rahmat_Casting_Center
         private void frmC_Account_Load(object sender, EventArgs e)
         {
             LoadStaffs("");
+        }
+
+        private void frmC_Account_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            { btnClose.PerformClick(); }
         }
     }
 }

@@ -110,6 +110,7 @@
             // 
             this.cmdClose.BackColor = System.Drawing.SystemColors.Control;
             this.cmdClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmdClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cmdClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.cmdClose.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.Highlight;
             this.cmdClose.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
@@ -232,6 +233,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cmdClose;
             this.ClientSize = new System.Drawing.Size(348, 319);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);

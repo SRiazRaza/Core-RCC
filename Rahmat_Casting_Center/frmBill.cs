@@ -17,19 +17,19 @@ namespace Rahmat_Casting_Center
 {
     public partial class frmBill : Form
     {
-       bool dec_spe=false;
+        bool dec_spe = false;
         decimal d;
         String ds = "";
-        String waist="";
+        String waist = "";
         int labour = 0;
         public frmBill()
         {
-           
+
             InitializeComponent();
-            
+
         }
-        
-       
+
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -41,7 +41,7 @@ namespace Rahmat_Casting_Center
             this.WindowState = FormWindowState.Minimized;
         }
 
-     
+
         private void close_b_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -94,11 +94,11 @@ namespace Rahmat_Casting_Center
             textBox15.Text = "0.000";
             textBox16.Text = "0.000";
             textBox17.Text = "0.000";
-          
+
             textBox20.Text = "0.000";
             textBox21.Text = "0.000";
             textBox22.Text = "0.000";
-    
+
             label22.Text = "";
             if (checkBox1.Checked == true) //
             {
@@ -111,16 +111,16 @@ namespace Rahmat_Casting_Center
         private void frmBill_Load(object sender, EventArgs e)
         {
             label5.Text = DateTime.Now.ToString("dd MMMM, yyyy");
-            
+
             SQLConn.getData();
             //for cash Acc name
-            textBox23.ReadOnly=true;
+            textBox23.ReadOnly = true;
             //for Cash
             textBox2.ReadOnly = true;
             textBox4.ReadOnly = true;
-         
 
-           check_decimal_func();
+
+            check_decimal_func();
             if (dec_spe == true) {
                 button4.Text = "3";
             }
@@ -128,15 +128,16 @@ namespace Rahmat_Casting_Center
             {
                 button4.Text = "2";
             }
-           
+            //      textBox1.Focus();
+
         }
 
-   
+
         private void checkSerial()
         {
             try
             {
-                SQLConn.sqL = "SELECT SerialNo FROM accountdetails where AccountID='"+textBox1.Text+"' ORDER BY SerialNo DESC";
+                SQLConn.sqL = "SELECT SerialNo FROM accountdetails where AccountID='" + textBox1.Text + "' ORDER BY SerialNo DESC";
                 SQLConn.ConnDB();
                 SQLConn.cmd = new MySqlCommand(SQLConn.sqL, SQLConn.conn);
                 SQLConn.dr = SQLConn.cmd.ExecuteReader();
@@ -191,15 +192,15 @@ namespace Rahmat_Casting_Center
 
 
 
-       void loadAccount(String accountID)
+        void loadAccount(String accountID)
         {
-            
+
             try
-            { 
-            SQLConn.sqL = "select *  FROM accounts where AccountID='" + accountID + "'";
-            SQLConn.ConnDB();
-            SQLConn.cmd = new MySqlCommand(SQLConn.sqL, SQLConn.conn);
-            SQLConn.dr = SQLConn.cmd.ExecuteReader();
+            {
+                SQLConn.sqL = "select *  FROM accounts where AccountID='" + accountID + "'";
+                SQLConn.ConnDB();
+                SQLConn.cmd = new MySqlCommand(SQLConn.sqL, SQLConn.conn);
+                SQLConn.dr = SQLConn.cmd.ExecuteReader();
 
 
 
@@ -250,12 +251,19 @@ namespace Rahmat_Casting_Center
                 SQLConn.conn.Close();
             }
         }
-  
-    
+
+
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
-            textBox9.Text = Strings.Format(Conversion.Val(textBox7.Text) - Conversion.Val(textBox8.Text));
+            try
+            {
+                textBox9.Text = Strings.Format(Conversion.Val(textBox7.Text) - Conversion.Val(textBox8.Text));
+            }
+            catch (Exception ex)
+            {
+                string bbb = ex.ToString();
+            }
 
         }
 
@@ -264,103 +272,143 @@ namespace Rahmat_Casting_Center
             if (dec_spe == true)
             {
 
-                textBox16.Text = Strings.Format(Conversion.Val(waist) * Conversion.Val(textBox17.Text), "#,###0.000");
+                try
+                {
+                    textBox16.Text = Strings.Format(Convert.ToDouble(waist) * Convert.ToDouble(textBox17.Text), "#,###0.000");
 
-                textBox15.Text = Strings.Format(Conversion.Val(textBox16.Text) + Conversion.Val(textBox17.Text), "#,###0.000");
+                    textBox15.Text = Strings.Format(Convert.ToDouble(textBox16.Text) + Convert.ToDouble(textBox17.Text), "#,###0.000");
 
-               // textBox11.Text = Strings.Format(Conversion.Val(textBox13.Text) - Conversion.Val(textBox12.Text), "#,###0.000");
+                    // textBox11.Text = Strings.Format(Conversion.Val(textBox13.Text) - Conversion.Val(textBox12.Text), "#,###0.000");
 
-                double a = Convert.ToDouble(textBox3.Text) * Convert.ToDouble(textBox15.Text);
-                a = a / 96;
-                textBox14.Text = Strings.Format(Conversion.Val(a), "#,###0.000");
 
-                textBox13.Text = Strings.Format(Convert.ToDouble(textBox15.Text) - Convert.ToDouble(textBox14.Text), "#,###0.000");
+                    int minim = 96;
+                    minim = minim - Convert.ToInt16(textBox3.Text);
+                    double a = Convert.ToDouble(minim) * Convert.ToDouble(textBox15.Text);
+                    a = a / 96;
+                    textBox13.Text = Strings.Format(Convert.ToDouble(a), "#,###0.000");
 
-                textBox12.Text = "0.000";
-   
+                    textBox14.Text = Strings.Format(Convert.ToDouble(textBox15.Text) - Convert.ToDouble(textBox13.Text), "#,###0.000");
+
+                }
+                catch (Exception ex) {
+                    string bbb = ex.ToString();
+
+                }
+
+
             }
             else {
+                try
+                {
+                    //Waist
+                    // Lines after changing 0.003
+                    double chng = Convert.ToDouble(waist) * Convert.ToDouble(textBox17.Text);
+                    chng = chng + 0.003; // Custom value changing
 
-                //Waist
-               
-                ds= Strings.Format(Conversion.Val(waist) * Conversion.Val(textBox17.Text),"#,###0.000");
-                d = Convert.ToDecimal(ds);
-                d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
-                textBox16.Text = d.ToString()+"0";
+                    ds = Strings.Format(chng, "#,###0.000");
+                    d = Convert.ToDecimal(ds);
+                    d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
+                    textBox16.Text = d.ToString() + "0";
 
-               //Total
-                ds = Strings.Format(Conversion.Val(textBox16.Text) + Conversion.Val(textBox17.Text), "#,###0.000");
-                d = Convert.ToDecimal(ds);
-               d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
-                textBox15.Text = d.ToString() + "0";
+                    //Total
+                    ds = Strings.Format(Convert.ToDouble(textBox16.Text) + Convert.ToDouble(textBox17.Text), "#,###0.000");
+                    d = Convert.ToDecimal(ds);
+                    d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
+                    textBox15.Text = d.ToString() + "0";
 
-                //Remaining Gold 1st CAll
-            /*    ds = Strings.Format(Conversion.Val(textBox13.Text) - Conversion.Val(textBox12.Text), "#,###0.000");  
-               d = Convert.ToDecimal(ds);
-               d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
-               textBox11.Text = d.ToString() + "0";
-               */
-                //Impurity
-                double a =Convert.ToDouble(textBox3.Text) * Convert.ToDouble(textBox15.Text);
-                a = a / 96;
-                ds = Strings.Format(a, "#,###0.000");
-                d = Convert.ToDecimal(ds);
-                d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
-                textBox14.Text = d.ToString() + "0";
-                
-                //Pure Gold
-                ds = Strings.Format(Conversion.Val(textBox15.Text) - Conversion.Val(textBox14.Text), "#,###0.000");
-                d = Convert.ToDecimal(ds);
-                d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
-                textBox13.Text = d.ToString() + "0";
+                    //Remaining Gold 1st CAll
+                    /*    ds = Strings.Format(Conversion.Val(textBox13.Text) - Conversion.Val(textBox12.Text), "#,###0.000");  
+                       d = Convert.ToDecimal(ds);
+                       d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
+                       textBox11.Text = d.ToString() + "0";
+                       */
 
-                textBox12.Text = "0.000";
+                    //Pure Gold
+                    // Changing value here 0.003
+                    int minim = 96;
+                    minim = minim - Convert.ToInt16(textBox3.Text);
+                    double a = Convert.ToDouble(minim) * Convert.ToDouble(textBox15.Text);
+                    a = a / 96;
+                    a = a + 0.003; // Custom value changing
+
+                    ds = Strings.Format(a, "#,###0.000");
+                    d = Convert.ToDecimal(ds);
+                    d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
+                    textBox13.Text = d.ToString() + "0";
+
+                    //Impurity
+                    ds = Strings.Format(Convert.ToDouble(textBox15.Text) - Convert.ToDouble(textBox13.Text), "#,###0.000");
+                    d = Convert.ToDecimal(ds);
+                    d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
+                    textBox14.Text = d.ToString() + "0";
 
 
+                    textBox12.Text = "0.000";
+                }
+                catch (Exception ex)
+
+                {
+                    string bbb = ex.ToString();
+                }
 
             }
         }
 
-     
+
 
 
         private void textBox12_TextChanged(object sender, EventArgs e)
         {
-            if (dec_spe == true)
+            try
             {
-                //Remaining Gold 2nd Call
-                textBox11.Text = Strings.Format(Conversion.Val(textBox13.Text) - Conversion.Val(textBox12.Text.Replace(",", "")), "#,###0.000");
-                textBox22.Text = Strings.Format(Conversion.Val(textBox10.Text) + Conversion.Val(textBox11.Text), "#,###0.000");
+                if (dec_spe == true)
+                {
+                    //Remaining Gold 2nd Call
 
+                    textBox11.Text = Strings.Format(Convert.ToDouble(textBox13.Text) - Convert.ToDouble(textBox12.Text.Replace(",", "")), "#,###0.000");
+                    textBox22.Text = Strings.Format(Convert.ToDouble(textBox10.Text) + Convert.ToDouble(textBox11.Text), "#,###0.000");
+                }
+                else
+                {
+                    //Remaining Gold 2nd Call
+                    ds = Strings.Format(Convert.ToDouble(textBox13.Text) - Convert.ToDouble(textBox12.Text), "#,###0.000");
+                    d = Convert.ToDecimal(ds);
+                    d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
+                    textBox11.Text = d.ToString() + "0";
+
+                    ds = Strings.Format(Convert.ToDouble(textBox10.Text) + Convert.ToDouble(textBox11.Text), "#,###0.000");
+                    d = Convert.ToDecimal(ds);
+                    d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
+                    textBox22.Text = d.ToString() + "0";
+                }
             }
-            else {
-
-                //Remaining Gold 2nd Call
-                ds = Strings.Format(Conversion.Val(textBox13.Text) - Conversion.Val(textBox12.Text), "#,###0.000");
-                d = Convert.ToDecimal(ds);
-                d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
-                textBox11.Text = d.ToString() + "0";
-
-                ds = Strings.Format(Conversion.Val(textBox10.Text) + Conversion.Val(textBox11.Text), "#,###0.000");
-                d = Convert.ToDecimal(ds);
-                d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
-                textBox22.Text = d.ToString() + "0";
+            catch (Exception ex)
+            {
+                string bbb = ex.ToString();
             }
+
         }
 
-       
+
         private void textBox21_TextChanged(object sender, EventArgs e)
         {
-            if (dec_spe == true)
+            try
             {
-                textBox20.Text = Strings.Format(Conversion.Val(textBox22.Text) - Conversion.Val(textBox21.Text), "#,###0.000");
+                if (dec_spe == true)
+                {
+                    textBox20.Text = Strings.Format(Convert.ToDouble(textBox22.Text) - Convert.ToDouble(textBox21.Text), "#,###0.000");
+                }
+                else
+                {
+                    ds = Strings.Format(Convert.ToDouble(textBox22.Text) - Convert.ToDouble(textBox21.Text), "#,###0.000");
+                    d = Convert.ToDecimal(ds);
+                    d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
+                    textBox20.Text = d.ToString() + "0";
+                }
             }
-            else {
-                ds = Strings.Format(Conversion.Val(textBox22.Text) - Conversion.Val(textBox21.Text), "#,###0.000");
-                d = Convert.ToDecimal(ds);
-                d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
-                textBox20.Text = d.ToString() + "0";
-
+            catch (Exception ex)
+            {
+                string bbb = ex.ToString();
             }
         }
 
@@ -373,10 +421,10 @@ namespace Rahmat_Casting_Center
                     insert_accountdetails(); //inserting bill info for each
                     insert_account();        // inserting account transactions personal
 
-                    frmpicture_form abc = new frmpicture_form(textBox1.Text, label22.Text,"Single");
-                    abc.ShowDialog();
+                    frmpicture_form picForm = new frmpicture_form(textBox1.Text, label22.Text, "Single");
+                    picForm.ShowDialog();
 
-                    frmPrint xyz = new frmPrint(textBox1.Text, label22.Text,"Single");
+                    frmPrint xyz = new frmPrint(textBox1.Text, label22.Text, "Single");
                     xyz.ShowDialog();
                 }
 
@@ -384,10 +432,10 @@ namespace Rahmat_Casting_Center
                 {
                     insert_Caccounts();
 
-                    frmpicture_form abc = new frmpicture_form(textBox1.Text, label22.Text,"Cash");
-                    abc.ShowDialog();
+                    frmpicture_form picForm = new frmpicture_form(textBox1.Text, label22.Text, "Cash");
+                    picForm.ShowDialog();
 
-                    frmPrint xyz = new frmPrint(textBox1.Text, label22.Text,"Cash");
+                    frmPrint xyz = new frmPrint(textBox1.Text, label22.Text, "Cash");
                     xyz.ShowDialog();
 
                 }
@@ -395,15 +443,20 @@ namespace Rahmat_Casting_Center
             else {
                 return;
             }
+
+
+        }
+        public void SetFocusonExit() {
+
             if (Interaction.MsgBox("Do you want to perform another transaction?", MsgBoxStyle.YesNo, "Transaction Successfully Completed.") == MsgBoxResult.Yes)
             {
                 trans_b.PerformClick();
                 textBox1.Focus();
             }
-            else {
+            else
+            {
                 this.Close();
             }
-  
 
         }
         void insert_Caccounts() {
@@ -575,19 +628,26 @@ namespace Rahmat_Casting_Center
         }
         private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
         {
-            if (checkBox1.Checked == true) //
+            if (checkBox1.Checked == true) //Cash Account
             {
+                textBox3.ReadOnly = true;
+
                 textBox1.ReadOnly = false;
                 textBox23.ReadOnly = false;
-               
+                textBox10.ReadOnly = false;
+                textBox6.ReadOnly = false;
+                
+
             }
-            else if (checkBox1.Checked == false)
+            else if (checkBox1.Checked == false) //Simple Account
             {
                 textBox1.ReadOnly = false;
+                textBox3.ReadOnly = false;
                 textBox23.ReadOnly = true;
                 textBox2.ReadOnly = true;
                 textBox4.ReadOnly = true;
-         
+                textBox10.ReadOnly = true;
+                textBox6.ReadOnly = true;
 
 
             }
@@ -603,14 +663,13 @@ namespace Rahmat_Casting_Center
             {
                 remove_b.PerformClick();
             }
-            else if (e.KeyCode == Keys.F3)
+            else if (e.KeyCode == Keys.F12)
             {
                 settle_b.PerformClick();
             }
             else if (e.KeyCode == Keys.F4)
             {
-                if (Interaction.MsgBox("Are sure you want to change the Account?", MsgBoxStyle.YesNo, "Changing Account.") == MsgBoxResult.Yes)
-                {
+                
                     if (checkBox1.Checked == false)
                     {
                         checkBox1.Checked = true;
@@ -619,17 +678,11 @@ namespace Rahmat_Casting_Center
                     {
                         checkBox1.Checked = false;
                     }
-                }
-                else
-                {
-                    return;
-                }
-
-
+                
             }
-            else if (e.KeyCode == Keys.Escape)
+            else if (e.KeyCode == Keys.F3)
             {
-                close_b.PerformClick();
+                button2.PerformClick();
             }
             else if (e.KeyCode == Keys.PageDown || e.KeyCode == Keys.PageUp)
             {
@@ -712,12 +765,19 @@ namespace Rahmat_Casting_Center
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            int a = Convert.ToInt32(textBox2.Text);
+            try {
+                int a = Convert.ToInt32(textBox2.Text);
 
-            double b = Convert.ToDouble(textBox22.Text);
-            var abc = a * b;
-          int xyz= Convert.ToInt32(abc);
-            textBox4.Text = xyz.ToString();
+                double b = Convert.ToDouble(textBox22.Text);
+                var abc = a * b;
+                int xyz = Convert.ToInt32(abc);
+                textBox4.Text = xyz.ToString();
+            }
+            catch (Exception ex)
+            {
+                string bbb = ex.ToString();
+            }
+
         }
 
         private void textBox22_TextChanged(object sender, EventArgs e)
@@ -801,9 +861,14 @@ namespace Rahmat_Casting_Center
        
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            textBox7.Text = Strings.Format(Conversion.Val(textBox5.Text) + Conversion.Val(textBox6.Text) + Conversion.Val(textBox4.Text));
-            textBox8.Text = "0";
-
+            try
+            {
+                textBox7.Text = Strings.Format(Conversion.Val(textBox5.Text) + Conversion.Val(textBox6.Text) + Conversion.Val(textBox4.Text));
+                textBox8.Text = "0";
+            }
+            catch (Exception ex) {
+                string bbb = ex.ToString();
+            }
         }
 
         private void textBox5_KeyDown(object sender, KeyEventArgs e)
@@ -822,15 +887,22 @@ namespace Rahmat_Casting_Center
 
         private void textBox20_TextChanged(object sender, EventArgs e)
         {
-            int a = Convert.ToInt32(textBox2.Text);
+            try
+            {
+                int a = Convert.ToInt32(textBox2.Text);
 
-            double b = Convert.ToDouble(textBox20.Text);
-            var abc = a * b;
-            int xyz = Convert.ToInt32(abc);
-            textBox4.Text = xyz.ToString();
+                double b = Convert.ToDouble(textBox20.Text);
+                var abc = a * b;
+                int xyz = Convert.ToInt32(abc);
+                textBox4.Text = xyz.ToString();
 
-            textBox7.Text = Strings.Format(Conversion.Val(textBox5.Text) + Conversion.Val(textBox6.Text) + Conversion.Val(textBox4.Text));
-            textBox8.Text = "0";
+                textBox7.Text = Strings.Format(Conversion.Val(textBox5.Text) + Conversion.Val(textBox6.Text) + Conversion.Val(textBox4.Text));
+                textBox8.Text = "0";
+            }
+            catch (Exception ex)
+            {
+                string bbb = ex.ToString();
+            }
 
 
         }
@@ -862,6 +934,7 @@ namespace Rahmat_Casting_Center
         private void remove_b_Click(object sender, EventArgs e)
         {
             clear_accounts();
+            clear_accounts();
             textBox1.Focus();
         }
 
@@ -880,6 +953,7 @@ namespace Rahmat_Casting_Center
         private void textBox12_Enter(object sender, EventArgs e)
         {
             la2.Text = "*";
+            textBox12.Text = " ";
 
         }
 
@@ -892,6 +966,7 @@ namespace Rahmat_Casting_Center
         private void textBox21_Enter(object sender, EventArgs e)
         {
             la3.Text = "*";
+            textBox21.Text = "";
 
         }
 
@@ -923,6 +998,12 @@ namespace Rahmat_Casting_Center
         {
             la5.Text = "";
 
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            frmRePrint abc = new frmRePrint();
+            abc.ShowDialog();
         }
     }
 }

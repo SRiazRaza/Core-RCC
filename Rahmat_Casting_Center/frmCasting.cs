@@ -20,8 +20,9 @@ namespace Rahmat_Casting_Center
         public frmCasting()
         {
             InitializeComponent();
-            
-        }
+
+            textBox2.Focus();
+                }
         void sumAccDet()
         {
 
@@ -85,9 +86,10 @@ namespace Rahmat_Casting_Center
 
         private void frmCasting_Load(object sender, EventArgs e)
         {
-           check_decimal_func();
+            check_decimal_func();
             load_casting();
-
+           // textBox2.Text = "0.000";
+            
         }
         void load_casting() {
 
@@ -110,27 +112,28 @@ namespace Rahmat_Casting_Center
         {
             try
             {
-                SQLConn.sqL = "SELECT Balance FROM casting";
+                SQLConn.sqL = "SELECT Balance FROM casting ORDER BY id DESC";
                 SQLConn.ConnDB();
                 SQLConn.cmd = new MySqlCommand(SQLConn.sqL, SQLConn.conn);
                 SQLConn.dr = SQLConn.cmd.ExecuteReader();
 
-                while (SQLConn.dr.Read() == true)
-                {
-                    if (dec_spe == true)
-                    {
-                        textBox1.Text = Strings.Format(SQLConn.dr["Balance"], "#,###0.000");
+                if (SQLConn.dr.Read() == true)
+                 {
+                      if (dec_spe == true)
+                       {
+                           textBox1.Text = Strings.Format(SQLConn.dr["Balance"], "#,###0.000");
 
-                    }
-                    else
-                    {
-                        ds = Strings.Format(SQLConn.dr["Balance"], "#,###0.000");
-                        d = Convert.ToDecimal(ds);
-                        d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
-                        textBox1.Text = d.ToString() + "0";
-                    }
-                     }
-          
+                       }
+                       else
+                       {
+                           ds = Strings.Format(SQLConn.dr["Balance"], "#,###0.000");
+                           d = Convert.ToDecimal(ds);
+                           d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
+                           textBox1.Text = d.ToString() + "0";
+                       }
+                }
+               
+
             }
             catch (Exception ex)
             {
@@ -184,36 +187,39 @@ namespace Rahmat_Casting_Center
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-      
-            if (dec_spe == true)
+            try
             {
-                textBox4.Text = Strings.Format((Conversion.Val(textBox1.Text) + Conversion.Val(textBox2.Text)) - Conversion.Val(textBox3.Text), "#,###0.000");
+                if (dec_spe == true)
+                {
+                    textBox4.Text = Strings.Format((Conversion.Val(textBox1.Text) + Conversion.Val(textBox2.Text)) - Conversion.Val(textBox3.Text), "#,###0.000");
 
+                }
+                else
+                {
+                    ds = Strings.Format((Conversion.Val(textBox1.Text) + Conversion.Val(textBox2.Text)) - Conversion.Val(textBox3.Text), "#,###0.000");
+                    d = Convert.ToDecimal(ds);
+                    d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
+                    textBox4.Text = d.ToString() + "0";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                ds = Strings.Format((Conversion.Val(textBox1.Text) + Conversion.Val(textBox2.Text)) - Conversion.Val(textBox3.Text), "#,###0.000");
-                d = Convert.ToDecimal(ds);
-                d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
-                textBox4.Text = d.ToString() + "0";
+                string bbb = ex.ToString();
             }
+
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                textBox2.Focus();
 
-            }
         }
 
 
         private void button2_Click(object sender, EventArgs e)
         {
             insert_casting();
-            Interaction.MsgBox("Casting Record Successfully added.", MsgBoxStyle.Information, "Casting Record");
-            clear_r();
+             clear_r();
+            button3.PerformClick();
         }
        void clear_r()
         {
@@ -245,10 +251,7 @@ namespace Rahmat_Casting_Center
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void dtpStartDate_ValueChanged(object sender, EventArgs e)
         {

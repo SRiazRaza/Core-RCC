@@ -30,6 +30,7 @@
         {
             this.PrintDocument1 = new System.Drawing.Printing.PrintDocument();
             this.Panel1 = new System.Windows.Forms.Panel();
+            this.type = new System.Windows.Forms.Label();
             this.lblTime1 = new System.Windows.Forms.Label();
             this.lblTMD1 = new System.Windows.Forms.Label();
             this.lblCM1 = new System.Windows.Forms.Label();
@@ -80,6 +81,7 @@
             // Panel1
             // 
             this.Panel1.BackColor = System.Drawing.Color.White;
+            this.Panel1.Controls.Add(this.type);
             this.Panel1.Controls.Add(this.lblTime1);
             this.Panel1.Controls.Add(this.lblTMD1);
             this.Panel1.Controls.Add(this.lblCM1);
@@ -126,11 +128,21 @@
             this.Panel1.Size = new System.Drawing.Size(879, 900);
             this.Panel1.TabIndex = 41;
             // 
+            // type
+            // 
+            this.type.AutoSize = true;
+            this.type.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.type.Location = new System.Drawing.Point(144, 569);
+            this.type.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.type.Name = "type";
+            this.type.Size = new System.Drawing.Size(0, 17);
+            this.type.TabIndex = 96;
+            // 
             // lblTime1
             // 
             this.lblTime1.AutoSize = true;
             this.lblTime1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime1.Location = new System.Drawing.Point(185, 665);
+            this.lblTime1.Location = new System.Drawing.Point(144, 599);
             this.lblTime1.Margin = new System.Windows.Forms.Padding(3);
             this.lblTime1.Name = "lblTime1";
             this.lblTime1.Size = new System.Drawing.Size(70, 17);
@@ -141,7 +153,7 @@
             // 
             this.lblTMD1.AutoSize = true;
             this.lblTMD1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTMD1.Location = new System.Drawing.Point(293, 818);
+            this.lblTMD1.Location = new System.Drawing.Point(252, 752);
             this.lblTMD1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.lblTMD1.Name = "lblTMD1";
             this.lblTMD1.Size = new System.Drawing.Size(40, 17);
@@ -152,7 +164,7 @@
             // 
             this.lblCM1.AutoSize = true;
             this.lblCM1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCM1.Location = new System.Drawing.Point(293, 797);
+            this.lblCM1.Location = new System.Drawing.Point(252, 731);
             this.lblCM1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.lblCM1.Name = "lblCM1";
             this.lblCM1.Size = new System.Drawing.Size(40, 17);
@@ -163,7 +175,7 @@
             // 
             this.lblMDebt1.AutoSize = true;
             this.lblMDebt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMDebt1.Location = new System.Drawing.Point(293, 776);
+            this.lblMDebt1.Location = new System.Drawing.Point(252, 710);
             this.lblMDebt1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.lblMDebt1.Name = "lblMDebt1";
             this.lblMDebt1.Size = new System.Drawing.Size(40, 17);
@@ -174,7 +186,7 @@
             // 
             this.lblLabour1.AutoSize = true;
             this.lblLabour1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLabour1.Location = new System.Drawing.Point(293, 755);
+            this.lblLabour1.Location = new System.Drawing.Point(252, 689);
             this.lblLabour1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.lblLabour1.Name = "lblLabour1";
             this.lblLabour1.Size = new System.Drawing.Size(40, 17);
@@ -185,7 +197,7 @@
             // 
             this.lblTGD1.AutoSize = true;
             this.lblTGD1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTGD1.Location = new System.Drawing.Point(185, 818);
+            this.lblTGD1.Location = new System.Drawing.Point(144, 752);
             this.lblTGD1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.lblTGD1.Name = "lblTGD1";
             this.lblTGD1.Size = new System.Drawing.Size(44, 17);
@@ -196,7 +208,7 @@
             // 
             this.lblCGG1.AutoSize = true;
             this.lblCGG1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCGG1.Location = new System.Drawing.Point(185, 797);
+            this.lblCGG1.Location = new System.Drawing.Point(144, 731);
             this.lblCGG1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.lblCGG1.Name = "lblCGG1";
             this.lblCGG1.Size = new System.Drawing.Size(44, 17);
@@ -207,7 +219,7 @@
             // 
             this.lblGD1.AutoSize = true;
             this.lblGD1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGD1.Location = new System.Drawing.Point(185, 776);
+            this.lblGD1.Location = new System.Drawing.Point(144, 710);
             this.lblGD1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.lblGD1.Name = "lblGD1";
             this.lblGD1.Size = new System.Drawing.Size(44, 17);
@@ -218,7 +230,7 @@
             // 
             this.lblAdvG1.AutoSize = true;
             this.lblAdvG1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdvG1.Location = new System.Drawing.Point(185, 755);
+            this.lblAdvG1.Location = new System.Drawing.Point(144, 689);
             this.lblAdvG1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.lblAdvG1.Name = "lblAdvG1";
             this.lblAdvG1.Size = new System.Drawing.Size(44, 17);
@@ -229,7 +241,7 @@
             // 
             this.lblCasting1.AutoSize = true;
             this.lblCasting1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCasting1.Location = new System.Drawing.Point(185, 734);
+            this.lblCasting1.Location = new System.Drawing.Point(144, 668);
             this.lblCasting1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.lblCasting1.Name = "lblCasting1";
             this.lblCasting1.Size = new System.Drawing.Size(44, 17);
@@ -240,7 +252,7 @@
             // 
             this.lblSerial1.AutoSize = true;
             this.lblSerial1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSerial1.Location = new System.Drawing.Point(185, 688);
+            this.lblSerial1.Location = new System.Drawing.Point(144, 622);
             this.lblSerial1.Margin = new System.Windows.Forms.Padding(3);
             this.lblSerial1.Name = "lblSerial1";
             this.lblSerial1.Size = new System.Drawing.Size(42, 17);
@@ -251,7 +263,7 @@
             // 
             this.lblAcc1.AutoSize = true;
             this.lblAcc1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAcc1.Location = new System.Drawing.Point(293, 688);
+            this.lblAcc1.Location = new System.Drawing.Point(252, 622);
             this.lblAcc1.Margin = new System.Windows.Forms.Padding(3);
             this.lblAcc1.Name = "lblAcc1";
             this.lblAcc1.Size = new System.Drawing.Size(27, 17);
@@ -261,11 +273,11 @@
             // lblName1
             // 
             this.lblName1.AutoSize = true;
-            this.lblName1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName1.Location = new System.Drawing.Point(293, 711);
+            this.lblName1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName1.Location = new System.Drawing.Point(251, 643);
             this.lblName1.Margin = new System.Windows.Forms.Padding(3);
             this.lblName1.Name = "lblName1";
-            this.lblName1.Size = new System.Drawing.Size(45, 17);
+            this.lblName1.Size = new System.Drawing.Size(47, 19);
             this.lblName1.TabIndex = 83;
             this.lblName1.Text = "Name";
             // 
@@ -273,7 +285,7 @@
             // 
             this.lblRati1.AutoSize = true;
             this.lblRati1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRati1.Location = new System.Drawing.Point(185, 711);
+            this.lblRati1.Location = new System.Drawing.Point(144, 645);
             this.lblRati1.Margin = new System.Windows.Forms.Padding(3);
             this.lblRati1.Name = "lblRati1";
             this.lblRati1.Size = new System.Drawing.Size(24, 17);
@@ -284,7 +296,7 @@
             // 
             this.lblDate1.AutoSize = true;
             this.lblDate1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate1.Location = new System.Drawing.Point(293, 665);
+            this.lblDate1.Location = new System.Drawing.Point(252, 599);
             this.lblDate1.Margin = new System.Windows.Forms.Padding(3);
             this.lblDate1.Name = "lblDate1";
             this.lblDate1.Size = new System.Drawing.Size(95, 17);
@@ -295,7 +307,7 @@
             // 
             this.lblSerial.AutoSize = true;
             this.lblSerial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSerial.Location = new System.Drawing.Point(411, 213);
+            this.lblSerial.Location = new System.Drawing.Point(354, 197);
             this.lblSerial.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
             this.lblSerial.Name = "lblSerial";
             this.lblSerial.Size = new System.Drawing.Size(42, 17);
@@ -306,7 +318,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(227, 419);
+            this.label25.Location = new System.Drawing.Point(123, 442);
             this.label25.Margin = new System.Windows.Forms.Padding(3);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(75, 21);
@@ -317,18 +329,19 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(411, 178);
+            this.lblTime.Location = new System.Drawing.Point(354, 162);
             this.lblTime.Margin = new System.Windows.Forms.Padding(3);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(50, 17);
             this.lblTime.TabIndex = 63;
             this.lblTime.Text = "hh:mm";
+            this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
             // 
             // lblMDebt
             // 
             this.lblMDebt.AutoSize = true;
             this.lblMDebt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMDebt.Location = new System.Drawing.Point(541, 353);
+            this.lblMDebt.Location = new System.Drawing.Point(484, 337);
             this.lblMDebt.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblMDebt.Name = "lblMDebt";
             this.lblMDebt.Size = new System.Drawing.Size(40, 17);
@@ -339,7 +352,7 @@
             // 
             this.lblSubTM.AutoSize = true;
             this.lblSubTM.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTM.Location = new System.Drawing.Point(541, 388);
+            this.lblSubTM.Location = new System.Drawing.Point(484, 372);
             this.lblSubTM.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblSubTM.Name = "lblSubTM";
             this.lblSubTM.Size = new System.Drawing.Size(40, 17);
@@ -350,7 +363,7 @@
             // 
             this.lblCM.AutoSize = true;
             this.lblCM.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCM.Location = new System.Drawing.Point(541, 423);
+            this.lblCM.Location = new System.Drawing.Point(484, 407);
             this.lblCM.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblCM.Name = "lblCM";
             this.lblCM.Size = new System.Drawing.Size(40, 17);
@@ -361,7 +374,7 @@
             // 
             this.lblTMD.AutoSize = true;
             this.lblTMD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTMD.Location = new System.Drawing.Point(541, 458);
+            this.lblTMD.Location = new System.Drawing.Point(484, 442);
             this.lblTMD.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblTMD.Name = "lblTMD";
             this.lblTMD.Size = new System.Drawing.Size(40, 17);
@@ -372,7 +385,7 @@
             // 
             this.lblRate.AutoSize = true;
             this.lblRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRate.Location = new System.Drawing.Point(541, 248);
+            this.lblRate.Location = new System.Drawing.Point(484, 232);
             this.lblRate.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblRate.Name = "lblRate";
             this.lblRate.Size = new System.Drawing.Size(40, 17);
@@ -383,7 +396,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(541, 283);
+            this.lblPrice.Location = new System.Drawing.Point(484, 267);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(40, 17);
@@ -394,7 +407,7 @@
             // 
             this.lblLabour.AutoSize = true;
             this.lblLabour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLabour.Location = new System.Drawing.Point(541, 318);
+            this.lblLabour.Location = new System.Drawing.Point(484, 302);
             this.lblLabour.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblLabour.Name = "lblLabour";
             this.lblLabour.Size = new System.Drawing.Size(40, 17);
@@ -405,7 +418,7 @@
             // 
             this.lblRati.AutoSize = true;
             this.lblRati.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRati.Location = new System.Drawing.Point(541, 213);
+            this.lblRati.Location = new System.Drawing.Point(484, 197);
             this.lblRati.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblRati.Name = "lblRati";
             this.lblRati.Size = new System.Drawing.Size(40, 17);
@@ -416,7 +429,7 @@
             // 
             this.lblGD.AutoSize = true;
             this.lblGD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGD.Location = new System.Drawing.Point(258, 283);
+            this.lblGD.Location = new System.Drawing.Point(201, 267);
             this.lblGD.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblGD.Name = "lblGD";
             this.lblGD.Size = new System.Drawing.Size(44, 17);
@@ -427,7 +440,7 @@
             // 
             this.lblTG.AutoSize = true;
             this.lblTG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTG.Location = new System.Drawing.Point(258, 318);
+            this.lblTG.Location = new System.Drawing.Point(201, 302);
             this.lblTG.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblTG.Name = "lblTG";
             this.lblTG.Size = new System.Drawing.Size(44, 17);
@@ -438,7 +451,7 @@
             // 
             this.lblCGG.AutoSize = true;
             this.lblCGG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCGG.Location = new System.Drawing.Point(258, 353);
+            this.lblCGG.Location = new System.Drawing.Point(201, 337);
             this.lblCGG.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblCGG.Name = "lblCGG";
             this.lblCGG.Size = new System.Drawing.Size(44, 17);
@@ -449,7 +462,7 @@
             // 
             this.lblTGD.AutoSize = true;
             this.lblTGD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTGD.Location = new System.Drawing.Point(258, 388);
+            this.lblTGD.Location = new System.Drawing.Point(201, 372);
             this.lblTGD.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblTGD.Name = "lblTGD";
             this.lblTGD.Size = new System.Drawing.Size(44, 17);
@@ -460,7 +473,7 @@
             // 
             this.lblAcc.AutoSize = true;
             this.lblAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAcc.Location = new System.Drawing.Point(588, 143);
+            this.lblAcc.Location = new System.Drawing.Point(531, 127);
             this.lblAcc.Margin = new System.Windows.Forms.Padding(3);
             this.lblAcc.Name = "lblAcc";
             this.lblAcc.Size = new System.Drawing.Size(27, 17);
@@ -470,11 +483,11 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(411, 143);
+            this.lblName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(353, 125);
             this.lblName.Margin = new System.Windows.Forms.Padding(3);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(45, 17);
+            this.lblName.Size = new System.Drawing.Size(47, 19);
             this.lblName.TabIndex = 49;
             this.lblName.Text = "Name";
             // 
@@ -482,7 +495,7 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(541, 178);
+            this.lblDate.Location = new System.Drawing.Point(484, 162);
             this.lblDate.Margin = new System.Windows.Forms.Padding(3);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(84, 17);
@@ -493,7 +506,7 @@
             // 
             this.lblRGold.AutoSize = true;
             this.lblRGold.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRGold.Location = new System.Drawing.Point(258, 248);
+            this.lblRGold.Location = new System.Drawing.Point(201, 232);
             this.lblRGold.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblRGold.Name = "lblRGold";
             this.lblRGold.Size = new System.Drawing.Size(44, 17);
@@ -504,7 +517,7 @@
             // 
             this.lblAdvG.AutoSize = true;
             this.lblAdvG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdvG.Location = new System.Drawing.Point(258, 213);
+            this.lblAdvG.Location = new System.Drawing.Point(201, 197);
             this.lblAdvG.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblAdvG.Name = "lblAdvG";
             this.lblAdvG.Size = new System.Drawing.Size(44, 17);
@@ -515,7 +528,7 @@
             // 
             this.lblPGold.AutoSize = true;
             this.lblPGold.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPGold.Location = new System.Drawing.Point(258, 178);
+            this.lblPGold.Location = new System.Drawing.Point(201, 162);
             this.lblPGold.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblPGold.Name = "lblPGold";
             this.lblPGold.Size = new System.Drawing.Size(44, 17);
@@ -526,7 +539,7 @@
             // 
             this.lblImpurity.AutoSize = true;
             this.lblImpurity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImpurity.Location = new System.Drawing.Point(258, 143);
+            this.lblImpurity.Location = new System.Drawing.Point(201, 127);
             this.lblImpurity.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblImpurity.Name = "lblImpurity";
             this.lblImpurity.Size = new System.Drawing.Size(44, 17);
@@ -537,7 +550,7 @@
             // 
             this.lblTWaist.AutoSize = true;
             this.lblTWaist.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTWaist.Location = new System.Drawing.Point(258, 108);
+            this.lblTWaist.Location = new System.Drawing.Point(201, 92);
             this.lblTWaist.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblTWaist.Name = "lblTWaist";
             this.lblTWaist.Size = new System.Drawing.Size(44, 17);
@@ -548,7 +561,7 @@
             // 
             this.lblWaist.AutoSize = true;
             this.lblWaist.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWaist.Location = new System.Drawing.Point(258, 73);
+            this.lblWaist.Location = new System.Drawing.Point(201, 57);
             this.lblWaist.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblWaist.Name = "lblWaist";
             this.lblWaist.Size = new System.Drawing.Size(44, 17);
@@ -559,7 +572,7 @@
             // 
             this.lblCasting.AutoSize = true;
             this.lblCasting.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCasting.Location = new System.Drawing.Point(258, 38);
+            this.lblCasting.Location = new System.Drawing.Point(201, 22);
             this.lblCasting.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblCasting.Name = "lblCasting";
             this.lblCasting.Size = new System.Drawing.Size(44, 17);
@@ -627,5 +640,6 @@
         private System.Windows.Forms.Label lblName1;
         private System.Windows.Forms.Label lblRati1;
         private System.Windows.Forms.Label lblDate1;
+        private System.Windows.Forms.Label type;
     }
 }

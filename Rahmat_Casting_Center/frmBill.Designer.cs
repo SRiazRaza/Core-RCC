@@ -88,6 +88,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label32 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -207,10 +208,10 @@
             // 
             // textBox23
             // 
-            this.textBox23.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox23.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox23.Location = new System.Drawing.Point(152, 64);
             this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(116, 23);
+            this.textBox23.Size = new System.Drawing.Size(116, 24);
             this.textBox23.TabIndex = 3;
             this.textBox23.TabStop = false;
             this.textBox23.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox23_KeyDown);
@@ -820,6 +821,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(585, 105);
@@ -846,6 +848,7 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.Control;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.close_b);
             this.panel4.Controls.Add(this.settle_b);
@@ -856,6 +859,24 @@
             this.panel4.Size = new System.Drawing.Size(260, 492);
             this.panel4.TabIndex = 90;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Constantia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(27, 119);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(205, 44);
+            this.button2.TabIndex = 94;
+            this.button2.TabStop = false;
+            this.button2.Text = "RePrint[F3]";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.BurlyWood;
@@ -863,7 +884,7 @@
             this.panel7.Controls.Add(this.label32);
             this.panel7.Controls.Add(this.checkBox1);
             this.panel7.ForeColor = System.Drawing.Color.Black;
-            this.panel7.Location = new System.Drawing.Point(27, 167);
+            this.panel7.Location = new System.Drawing.Point(27, 169);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(205, 43);
             this.panel7.TabIndex = 93;
@@ -897,6 +918,7 @@
             // close_b
             // 
             this.close_b.BackColor = System.Drawing.Color.Orchid;
+            this.close_b.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.close_b.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.close_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.close_b.Font = new System.Drawing.Font("Constantia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -920,12 +942,12 @@
             this.settle_b.Font = new System.Drawing.Font("Constantia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settle_b.ForeColor = System.Drawing.Color.White;
             this.settle_b.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.settle_b.Location = new System.Drawing.Point(27, 118);
+            this.settle_b.Location = new System.Drawing.Point(27, 218);
             this.settle_b.Name = "settle_b";
             this.settle_b.Size = new System.Drawing.Size(205, 44);
             this.settle_b.TabIndex = 90;
             this.settle_b.TabStop = false;
-            this.settle_b.Text = "Print[F3]";
+            this.settle_b.Text = "Print[F12]";
             this.settle_b.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.settle_b.UseVisualStyleBackColor = false;
             this.settle_b.Click += new System.EventHandler(this.settle_b_Click);
@@ -1023,6 +1045,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.close_b;
             this.ClientSize = new System.Drawing.Size(983, 689);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
@@ -1124,5 +1147,6 @@
         private System.Windows.Forms.Label la2;
         private System.Windows.Forms.Label la3;
         private System.Windows.Forms.Label la1;
+        private System.Windows.Forms.Button button2;
     }
 }

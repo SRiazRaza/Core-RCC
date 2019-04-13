@@ -2448,7 +2448,6 @@ namespace Rahmat_Casting_Center {
                 this.columnTDetailNo.Unique = true;
                 this.columnAccountID.MaxLength = 21845;
                 this.columnName.MaxLength = 21845;
-                this.columnDateIN.MaxLength = 21845;
                 this.columnTimeIN.MaxLength = 21845;
             }
             
@@ -2782,7 +2781,6 @@ namespace Rahmat_Casting_Center {
                 this.columnid.AllowDBNull = false;
                 this.columnid.Unique = true;
                 this.columnDateIN.AllowDBNull = false;
-                this.columnDateIN.MaxLength = 45;
                 this.columnCurrentCasting.AllowDBNull = false;
                 this.columnCastingCame.AllowDBNull = false;
                 this.columnSaleCasting.AllowDBNull = false;
@@ -8551,7 +8549,6 @@ namespace Rahmat_Casting_Center.rahmat_casting_centerDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("TDetailNo", "TDetailNo");
             tableMapping.ColumnMappings.Add("AccountID", "AccountID");
             tableMapping.ColumnMappings.Add("Name", "Name");
-            tableMapping.ColumnMappings.Add("DateIN", "DateIN");
             tableMapping.ColumnMappings.Add("TimeIN", "TimeIN");
             tableMapping.ColumnMappings.Add("GoldRate", "GoldRate");
             tableMapping.ColumnMappings.Add("GoldPrice", "GoldPrice");
@@ -8575,6 +8572,7 @@ namespace Rahmat_Casting_Center.rahmat_casting_centerDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("SerialNo", "SerialNo");
             tableMapping.ColumnMappings.Add("image", "image");
             tableMapping.ColumnMappings.Add("image1", "image1");
+            tableMapping.ColumnMappings.Add("DateIN", "DateIN");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -9910,11 +9908,11 @@ namespace Rahmat_Casting_Center.rahmat_casting_centerDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "casting";
             tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("DateIN", "DateIN");
             tableMapping.ColumnMappings.Add("CurrentCasting", "CurrentCasting");
             tableMapping.ColumnMappings.Add("CastingCame", "CastingCame");
             tableMapping.ColumnMappings.Add("SaleCasting", "SaleCasting");
             tableMapping.ColumnMappings.Add("Balance", "Balance");
+            tableMapping.ColumnMappings.Add("DateIN", "DateIN");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;

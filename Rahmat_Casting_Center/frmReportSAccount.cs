@@ -37,12 +37,12 @@ namespace Rahmat_Casting_Center
             {
                 if (find == "")
                 {
-                    SQLConn.sqL = "SELECT TDetailNo,CONCAT(Firstname, ' ', Lastname)as Name,ad.AccountID,SerialNo,ad.DateIN,TimeIN,Rati,ad.Labour,L_Money_In_Debt,Total_Money,CurrentGivenMoney,Total_Money_In_Debt,Casting,ad.Waist,Total_Casting,Impurity,PureGold,AdvanceGivenGold,Subtotal_Gold,L_Gold_In_Debt,Total_Gold,CurrentGivenGold,Total_Gold_In_Debt from accountdetails as ad,accounts as a where ad.AccountID=a.AccountID AND ad.DateIN BETWEEN '" + StartDate.ToString("MM-dd-yyyy") + "' AND '" + EndDate.ToString("MM-dd-yyyy") + "'   GROUP BY TDetailNo,ad.AccountID ORDER BY ad.DateIN";
+                    SQLConn.sqL = "SELECT TDetailNo,CONCAT(Firstname, ' ', Lastname)as Name,ad.AccountID,SerialNo,ad.DateIN,TimeIN,Rati,ad.Labour,L_Money_In_Debt,Total_Money,CurrentGivenMoney,Total_Money_In_Debt,Casting,ad.Waist,Total_Casting,Impurity,PureGold,AdvanceGivenGold,Subtotal_Gold,L_Gold_In_Debt,Total_Gold,CurrentGivenGold,Total_Gold_In_Debt from accountdetails as ad,accounts as a where ad.AccountID=a.AccountID AND DATE_FORMAT(STR_TO_DATE(ad.DateIN, '%m-%d-%Y'), '%Y-%m-%d') BETWEEN '" + StartDate.ToString("yyyy-MM-dd") + "' AND '" + EndDate.ToString("yyyy-MM-dd") + "'   GROUP BY TDetailNo,ad.AccountID ORDER BY ad.DateIN";
 
                 }
                 else
                 {
-                    SQLConn.sqL = "SELECT TDetailNo,CONCAT(Firstname, ' ', Lastname)as Name,ad.AccountID,SerialNo,ad.DateIN,TimeIN,Rati,ad.Labour,L_Money_In_Debt,Total_Money,CurrentGivenMoney,Total_Money_In_Debt,Casting,ad.Waist,Total_Casting,Impurity,PureGold,AdvanceGivenGold,Subtotal_Gold,L_Gold_In_Debt,Total_Gold,CurrentGivenGold,Total_Gold_In_Debt from accountdetails as ad,accounts as a where ad.AccountID='" + find + "' AND ad.AccountID=a.AccountID AND ad.DateIN BETWEEN '" + StartDate.ToString("MM-dd-yyyy") + "' AND '" + EndDate.ToString("MM-dd-yyyy") + "'   GROUP BY TDetailNo,ad.AccountID ORDER BY ad.DateIN";
+                    SQLConn.sqL = "SELECT TDetailNo,CONCAT(Firstname, ' ', Lastname)as Name,ad.AccountID,SerialNo,ad.DateIN,TimeIN,Rati,ad.Labour,L_Money_In_Debt,Total_Money,CurrentGivenMoney,Total_Money_In_Debt,Casting,ad.Waist,Total_Casting,Impurity,PureGold,AdvanceGivenGold,Subtotal_Gold,L_Gold_In_Debt,Total_Gold,CurrentGivenGold,Total_Gold_In_Debt from accountdetails as ad,accounts as a where ad.AccountID='" + find + "' AND ad.AccountID=a.AccountID AND DATE_FORMAT(STR_TO_DATE(ad.DateIN, '%m-%d-%Y'), '%Y-%m-%d') BETWEEN '" + StartDate.ToString("yyyy-MM-dd") + "' AND '" + EndDate.ToString("yyyy-MM-dd") + "'   GROUP BY TDetailNo,ad.AccountID ORDER BY ad.DateIN";
                 }
                 SQLConn.ConnDB();
                 SQLConn.cmd = new MySqlCommand(SQLConn.sqL, SQLConn.conn);
@@ -64,6 +64,7 @@ namespace Rahmat_Casting_Center
                 Interaction.MsgBox(ex.ToString());
             }
         }
-      
+
+       
     }
 }

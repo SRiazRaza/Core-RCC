@@ -30,10 +30,7 @@ namespace Rahmat_Casting_Center
         {
             // TODO: This line of code loads data into the 'rahmat_casting_centerDataSet.debtin' table. You can move, or remove it, as needed.
             this.debtinTableAdapter.Fill(this.rahmat_casting_centerDataSet.debtin);
-            // TODO: This line of code loads data into the 'rahmat_casting_centerDataSet.debtin' table. You can move, or remove it, as needed.
-            //   this.debtinTableAdapter.Fill(this.rahmat_casting_centerDataSet.debtin);
-
-            //  this.reportViewer1.RefreshReport();
+       
             LoadReport();
         }
         private void LoadReport()
@@ -42,10 +39,10 @@ namespace Rahmat_Casting_Center
             {
                 if (find == "")
                 {
-                    SQLConn.sqL = "SELECT * from debtin  where DateIN BETWEEN '" + StartDate.ToString("MM-dd-yyyy") + "' AND '" + EndDate.ToString("MM-dd-yyyy") + "'   GROUP BY TDetailNo,AccountID ORDER BY DateIN";
+                    SQLConn.sqL = "SELECT * from debtin  where DATE_FORMAT(STR_TO_DATE(DateIN, '%m-%d-%Y'), '%Y-%m-%d') BETWEEN '" + StartDate.ToString("yyyy-MM-dd") + "' AND '" + EndDate.ToString("yyyy-MM-dd") + "'   GROUP BY TDetailNo,AccountID ORDER BY DateIN";
                 }
                 else {
-                    SQLConn.sqL = "SELECT * from debtin  where AccountID='"+find+"' AND DateIN BETWEEN '" + StartDate.ToString("MM-dd-yyyy") + "' AND '" + EndDate.ToString("MM-dd-yyyy") + "'   GROUP BY TDetailNo,AccountID ORDER BY DateIN";
+                    SQLConn.sqL = "SELECT * from debtin  where AccountID='"+find+ "' AND DATE_FORMAT(STR_TO_DATE(DateIN, '%m-%d-%Y'), '%Y-%m-%d') BETWEEN '" + StartDate.ToString("yyyy-MM-dd") + "' AND '" + EndDate.ToString("yyyy-MM-dd") + "'   GROUP BY TDetailNo,AccountID ORDER BY DateIN";
 
                 }
                 SQLConn.ConnDB();

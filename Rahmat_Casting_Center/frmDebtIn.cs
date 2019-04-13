@@ -73,7 +73,7 @@ namespace Rahmat_Casting_Center
                 SQLConn.ConnDB();
                 SQLConn.cmd = new MySqlCommand(SQLConn.sqL, SQLConn.conn);
                 SQLConn.cmd.ExecuteNonQuery();
-                Interaction.MsgBox("Debts successfully added.", MsgBoxStyle.Information, "Add Debt");
+
                 UpdateAccountDebt();
             }
             catch (Exception ex)

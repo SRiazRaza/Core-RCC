@@ -48,6 +48,7 @@ namespace Rahmat_Casting_Center
                     SQLConn.adding = false;
                     SQLConn.updating = true;
                     staffID = Convert.ToInt32(ListView1.FocusedItem.Text);
+                    ListView1.FocusedItem.Focused = false;
                     frmAddEditAccount f2 = new frmAddEditAccount(staffID);
                     f2.ShowDialog();
                 }
@@ -104,7 +105,7 @@ namespace Rahmat_Casting_Center
         {
             try
             {
-                SQLConn.sqL = "SELECT AccountID, CONCAT( Firstname,' ',Lastname,  ' ') as ClientName, CONCAT( Area, ', ', City) as Address, ContactNo,ShopNo,Gold_Debt,Money_Debt,DateIN FROM accounts WHERE FIRSTNAME LIKE '" + search.Trim() + "%' ORDER By AccountID";
+                SQLConn.sqL = "SELECT AccountID, CONCAT( Firstname,' ',Lastname,  ' ') as ClientName, CONCAT( Area, ', ', City) as Address, ContactNo,ShopNo,Gold_Debt,Money_Debt,DateIN FROM accounts WHERE AccountID LIKE '" + search.Trim() + "%' ORDER By AccountID";
                 SQLConn.ConnDB();
                 SQLConn.cmd = new MySqlCommand(SQLConn.sqL, SQLConn.conn);
                 SQLConn.dr = SQLConn.cmd.ExecuteReader();
@@ -194,6 +195,7 @@ namespace Rahmat_Casting_Center
                 {
 
                     int account = Convert.ToInt32(ListView1.FocusedItem.Text);
+                    ListView1.FocusedItem.Focused = false;
                     frmDebtIn aeP = new frmDebtIn(account);
                     aeP.ShowDialog();
                 }
@@ -231,6 +233,7 @@ namespace Rahmat_Casting_Center
                         mb.ExportInfo.AddCreateDatabase = true;                        
                         List<string> abc = new List<string>();
                         abc.Add("accounts");
+                        abc.Add("cash_account");
                         mb.ExportInfo.TablesToBeExportedList = abc;
                         mb.ExportInfo.ExportTableStructure = true;
                         mb.ExportInfo.ExportRows = true;
@@ -274,6 +277,32 @@ namespace Rahmat_Casting_Center
                 MessageBox.Show("Restroring UnSuccessfull. " + ex);
             }
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double sum1 = 0;
+                int sum2 = 0;
+
+                for (int i = 0; i < ListView1.Items.Count; ++i)
+                {
+                    sum1 += Convert.ToDouble(ListView1.Items[i].SubItems[2].Text);
+
+                }
+                for (int i = 0; i < ListView1.Items.Count; ++i)
+                {
+                    sum2 += int.Parse(ListView1.Items[i].SubItems[3].Text);
+
+                }
+
+                MessageBox.Show("Gold: " + sum1.ToString() + "\n" + "Cash: " + sum2.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

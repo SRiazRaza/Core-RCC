@@ -53,7 +53,7 @@ namespace Rahmat_Casting_Center
                 SQLConn.ConnDB();
                 SQLConn.cmd = new MySqlCommand(SQLConn.sqL, SQLConn.conn);
                 SQLConn.cmd.ExecuteNonQuery();
-                Interaction.MsgBox("New Cash Account successfully added.", MsgBoxStyle.Information, "Add Cash Account");
+             //   Interaction.MsgBox("New Cash Account successfully added.", MsgBoxStyle.Information, "Add Cash Account");
             }
             catch (Exception ex)
             {
@@ -76,7 +76,7 @@ namespace Rahmat_Casting_Center
                 SQLConn.ConnDB();
                 SQLConn.cmd = new MySqlCommand(SQLConn.sqL, SQLConn.conn);
                 SQLConn.cmd.ExecuteNonQuery();
-                Interaction.MsgBox("Cash Account record successfully updated", MsgBoxStyle.Information, "Update Cash Account");
+           //     Interaction.MsgBox("Cash Account record successfully updated", MsgBoxStyle.Information, "Update Cash Account");
 
             }
             catch (Exception ex)

@@ -410,7 +410,6 @@
               <Mapping SourceColumn="TDetailNo" DataSetColumn="TDetailNo" />
               <Mapping SourceColumn="AccountID" DataSetColumn="AccountID" />
               <Mapping SourceColumn="Name" DataSetColumn="Name" />
-              <Mapping SourceColumn="DateIN" DataSetColumn="DateIN" />
               <Mapping SourceColumn="TimeIN" DataSetColumn="TimeIN" />
               <Mapping SourceColumn="GoldRate" DataSetColumn="GoldRate" />
               <Mapping SourceColumn="GoldPrice" DataSetColumn="GoldPrice" />
@@ -434,6 +433,7 @@
               <Mapping SourceColumn="SerialNo" DataSetColumn="SerialNo" />
               <Mapping SourceColumn="image" DataSetColumn="image" />
               <Mapping SourceColumn="image1" DataSetColumn="image1" />
+              <Mapping SourceColumn="DateIN" DataSetColumn="DateIN" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -493,11 +493,11 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="id" DataSetColumn="id" />
-              <Mapping SourceColumn="DateIN" DataSetColumn="DateIN" />
               <Mapping SourceColumn="CurrentCasting" DataSetColumn="CurrentCasting" />
               <Mapping SourceColumn="CastingCame" DataSetColumn="CastingCame" />
               <Mapping SourceColumn="SaleCasting" DataSetColumn="SaleCasting" />
               <Mapping SourceColumn="Balance" DataSetColumn="Balance" />
+              <Mapping SourceColumn="DateIN" DataSetColumn="DateIN" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -667,7 +667,7 @@
   <xs:element name="rahmat_casting_centerDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="rahmat_casting_centerDataSet" msprop:Generator_UserDSName="rahmat_casting_centerDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="setting" msprop:Generator_TableClassName="settingDataTable" msprop:Generator_TableVarName="tablesetting" msprop:Generator_RowChangedName="settingRowChanged" msprop:Generator_TablePropName="setting" msprop:Generator_RowDeletingName="settingRowDeleting" msprop:Generator_RowChangingName="settingRowChanging" msprop:Generator_RowEvHandlerName="settingRowChangeEventHandler" msprop:Generator_RowDeletedName="settingRowDeleted" msprop:Generator_RowClassName="settingRow" msprop:Generator_UserTableName="setting" msprop:Generator_RowEvArgName="settingRowChangeEvent">
+        <xs:element name="setting" msprop:Generator_TableClassName="settingDataTable" msprop:Generator_TableVarName="tablesetting" msprop:Generator_TablePropName="setting" msprop:Generator_RowDeletingName="settingRowDeleting" msprop:Generator_RowChangingName="settingRowChanging" msprop:Generator_RowEvHandlerName="settingRowChangeEventHandler" msprop:Generator_RowDeletedName="settingRowDeleted" msprop:Generator_UserTableName="setting" msprop:Generator_RowChangedName="settingRowChanged" msprop:Generator_RowEvArgName="settingRowChangeEvent" msprop:Generator_RowClassName="settingRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -688,7 +688,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="cash_account" msprop:Generator_TableClassName="cash_accountDataTable" msprop:Generator_TableVarName="tablecash_account" msprop:Generator_TablePropName="cash_account" msprop:Generator_RowDeletingName="cash_accountRowDeleting" msprop:Generator_RowChangingName="cash_accountRowChanging" msprop:Generator_RowEvHandlerName="cash_accountRowChangeEventHandler" msprop:Generator_RowDeletedName="cash_accountRowDeleted" msprop:Generator_UserTableName="cash_account" msprop:Generator_RowChangedName="cash_accountRowChanged" msprop:Generator_RowEvArgName="cash_accountRowChangeEvent" msprop:Generator_RowClassName="cash_accountRow">
+        <xs:element name="cash_account" msprop:Generator_TableClassName="cash_accountDataTable" msprop:Generator_TableVarName="tablecash_account" msprop:Generator_RowChangedName="cash_accountRowChanged" msprop:Generator_TablePropName="cash_account" msprop:Generator_RowDeletingName="cash_accountRowDeleting" msprop:Generator_RowChangingName="cash_accountRowChanging" msprop:Generator_RowEvHandlerName="cash_accountRowChangeEventHandler" msprop:Generator_RowDeletedName="cash_accountRowDeleted" msprop:Generator_RowClassName="cash_accountRow" msprop:Generator_UserTableName="cash_account" msprop:Generator_RowEvArgName="cash_accountRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="AccountID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnAccountID" msprop:Generator_ColumnPropNameInRow="AccountID" msprop:Generator_ColumnPropNameInTable="AccountIDColumn" msprop:Generator_UserColumnName="AccountID" type="xs:int" />
@@ -723,7 +723,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="debtin" msprop:Generator_TableClassName="debtinDataTable" msprop:Generator_TableVarName="tabledebtin" msprop:Generator_TablePropName="debtin" msprop:Generator_RowDeletingName="debtinRowDeleting" msprop:Generator_RowChangingName="debtinRowChanging" msprop:Generator_RowEvHandlerName="debtinRowChangeEventHandler" msprop:Generator_RowDeletedName="debtinRowDeleted" msprop:Generator_UserTableName="debtin" msprop:Generator_RowChangedName="debtinRowChanged" msprop:Generator_RowEvArgName="debtinRowChangeEvent" msprop:Generator_RowClassName="debtinRow">
+        <xs:element name="debtin" msprop:Generator_TableClassName="debtinDataTable" msprop:Generator_TableVarName="tabledebtin" msprop:Generator_RowChangedName="debtinRowChanged" msprop:Generator_TablePropName="debtin" msprop:Generator_RowDeletingName="debtinRowDeleting" msprop:Generator_RowChangingName="debtinRowChanging" msprop:Generator_RowEvHandlerName="debtinRowChangeEventHandler" msprop:Generator_RowDeletedName="debtinRowDeleted" msprop:Generator_RowClassName="debtinRow" msprop:Generator_UserTableName="debtin" msprop:Generator_RowEvArgName="debtinRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TDetailNo" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTDetailNo" msprop:Generator_ColumnPropNameInRow="TDetailNo" msprop:Generator_ColumnPropNameInTable="TDetailNoColumn" msprop:Generator_UserColumnName="TDetailNo" type="xs:int" />
@@ -758,7 +758,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="accounts" msprop:Generator_TableClassName="accountsDataTable" msprop:Generator_TableVarName="tableaccounts" msprop:Generator_RowChangedName="accountsRowChanged" msprop:Generator_TablePropName="accounts" msprop:Generator_RowDeletingName="accountsRowDeleting" msprop:Generator_RowChangingName="accountsRowChanging" msprop:Generator_RowEvHandlerName="accountsRowChangeEventHandler" msprop:Generator_RowDeletedName="accountsRowDeleted" msprop:Generator_RowClassName="accountsRow" msprop:Generator_UserTableName="accounts" msprop:Generator_RowEvArgName="accountsRowChangeEvent">
+        <xs:element name="accounts" msprop:Generator_TableClassName="accountsDataTable" msprop:Generator_TableVarName="tableaccounts" msprop:Generator_TablePropName="accounts" msprop:Generator_RowDeletingName="accountsRowDeleting" msprop:Generator_RowChangingName="accountsRowChanging" msprop:Generator_RowEvHandlerName="accountsRowChangeEventHandler" msprop:Generator_RowDeletedName="accountsRowDeleted" msprop:Generator_UserTableName="accounts" msprop:Generator_RowChangedName="accountsRowChanged" msprop:Generator_RowEvArgName="accountsRowChangeEvent" msprop:Generator_RowClassName="accountsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="AccountID" msprop:Generator_ColumnVarNameInTable="columnAccountID" msprop:Generator_ColumnPropNameInRow="AccountID" msprop:Generator_ColumnPropNameInTable="AccountIDColumn" msprop:Generator_UserColumnName="AccountID" type="xs:unsignedInt" />
@@ -806,7 +806,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="caccountdetails" msprop:Generator_TableClassName="caccountdetailsDataTable" msprop:Generator_TableVarName="tablecaccountdetails" msprop:Generator_RowChangedName="caccountdetailsRowChanged" msprop:Generator_TablePropName="caccountdetails" msprop:Generator_RowDeletingName="caccountdetailsRowDeleting" msprop:Generator_RowChangingName="caccountdetailsRowChanging" msprop:Generator_RowEvHandlerName="caccountdetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="caccountdetailsRowDeleted" msprop:Generator_RowClassName="caccountdetailsRow" msprop:Generator_UserTableName="caccountdetails" msprop:Generator_RowEvArgName="caccountdetailsRowChangeEvent">
+        <xs:element name="caccountdetails" msprop:Generator_TableClassName="caccountdetailsDataTable" msprop:Generator_TableVarName="tablecaccountdetails" msprop:Generator_TablePropName="caccountdetails" msprop:Generator_RowDeletingName="caccountdetailsRowDeleting" msprop:Generator_RowChangingName="caccountdetailsRowChanging" msprop:Generator_RowEvHandlerName="caccountdetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="caccountdetailsRowDeleted" msprop:Generator_UserTableName="caccountdetails" msprop:Generator_RowChangedName="caccountdetailsRowChanged" msprop:Generator_RowEvArgName="caccountdetailsRowChangeEvent" msprop:Generator_RowClassName="caccountdetailsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TDetailNo" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTDetailNo" msprop:Generator_ColumnPropNameInRow="TDetailNo" msprop:Generator_ColumnPropNameInTable="TDetailNoColumn" msprop:Generator_UserColumnName="TDetailNo" type="xs:int" />
@@ -824,13 +824,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DateIN" msprop:Generator_ColumnVarNameInTable="columnDateIN" msprop:Generator_ColumnPropNameInRow="DateIN" msprop:Generator_ColumnPropNameInTable="DateINColumn" msprop:Generator_UserColumnName="DateIN" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="21845" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="DateIN" msprop:Generator_ColumnVarNameInTable="columnDateIN" msprop:Generator_ColumnPropNameInRow="DateIN" msprop:Generator_ColumnPropNameInTable="DateINColumn" msprop:Generator_UserColumnName="DateIN" type="xs:string" minOccurs="0" />
               <xs:element name="TimeIN" msprop:Generator_ColumnVarNameInTable="columnTimeIN" msprop:Generator_ColumnPropNameInRow="TimeIN" msprop:Generator_ColumnPropNameInTable="TimeINColumn" msprop:Generator_UserColumnName="TimeIN" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -863,17 +857,11 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="casting" msprop:Generator_TableClassName="castingDataTable" msprop:Generator_TableVarName="tablecasting" msprop:Generator_RowChangedName="castingRowChanged" msprop:Generator_TablePropName="casting" msprop:Generator_RowDeletingName="castingRowDeleting" msprop:Generator_RowChangingName="castingRowChanging" msprop:Generator_RowEvHandlerName="castingRowChangeEventHandler" msprop:Generator_RowDeletedName="castingRowDeleted" msprop:Generator_RowClassName="castingRow" msprop:Generator_UserTableName="casting" msprop:Generator_RowEvArgName="castingRowChangeEvent">
+        <xs:element name="casting" msprop:Generator_TableClassName="castingDataTable" msprop:Generator_TableVarName="tablecasting" msprop:Generator_TablePropName="casting" msprop:Generator_RowDeletingName="castingRowDeleting" msprop:Generator_RowChangingName="castingRowChanging" msprop:Generator_RowEvHandlerName="castingRowChangeEventHandler" msprop:Generator_RowDeletedName="castingRowDeleted" msprop:Generator_UserTableName="casting" msprop:Generator_RowChangedName="castingRowChanged" msprop:Generator_RowEvArgName="castingRowChangeEvent" msprop:Generator_RowClassName="castingRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
-              <xs:element name="DateIN" msprop:Generator_ColumnVarNameInTable="columnDateIN" msprop:Generator_ColumnPropNameInRow="DateIN" msprop:Generator_ColumnPropNameInTable="DateINColumn" msprop:Generator_UserColumnName="DateIN">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="45" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="DateIN" msprop:Generator_ColumnVarNameInTable="columnDateIN" msprop:Generator_ColumnPropNameInRow="DateIN" msprop:Generator_ColumnPropNameInTable="DateINColumn" msprop:Generator_UserColumnName="DateIN" type="xs:string" />
               <xs:element name="CurrentCasting" msprop:Generator_ColumnVarNameInTable="columnCurrentCasting" msprop:Generator_ColumnPropNameInRow="CurrentCasting" msprop:Generator_ColumnPropNameInTable="CurrentCastingColumn" msprop:Generator_UserColumnName="CurrentCasting" type="xs:double" />
               <xs:element name="CastingCame" msprop:Generator_ColumnVarNameInTable="columnCastingCame" msprop:Generator_ColumnPropNameInRow="CastingCame" msprop:Generator_ColumnPropNameInTable="CastingCameColumn" msprop:Generator_UserColumnName="CastingCame" type="xs:double" />
               <xs:element name="SaleCasting" msprop:Generator_ColumnVarNameInTable="columnSaleCasting" msprop:Generator_ColumnPropNameInRow="SaleCasting" msprop:Generator_ColumnPropNameInTable="SaleCastingColumn" msprop:Generator_UserColumnName="SaleCasting" type="xs:double" />
@@ -881,7 +869,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="accountdetails" msprop:Generator_TableClassName="accountdetailsDataTable" msprop:Generator_TableVarName="tableaccountdetails" msprop:Generator_RowChangedName="accountdetailsRowChanged" msprop:Generator_TablePropName="accountdetails" msprop:Generator_RowDeletingName="accountdetailsRowDeleting" msprop:Generator_RowChangingName="accountdetailsRowChanging" msprop:Generator_RowEvHandlerName="accountdetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="accountdetailsRowDeleted" msprop:Generator_RowClassName="accountdetailsRow" msprop:Generator_UserTableName="accountdetails" msprop:Generator_RowEvArgName="accountdetailsRowChangeEvent">
+        <xs:element name="accountdetails" msprop:Generator_TableClassName="accountdetailsDataTable" msprop:Generator_TableVarName="tableaccountdetails" msprop:Generator_TablePropName="accountdetails" msprop:Generator_RowDeletingName="accountdetailsRowDeleting" msprop:Generator_RowChangingName="accountdetailsRowChanging" msprop:Generator_RowEvHandlerName="accountdetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="accountdetailsRowDeleted" msprop:Generator_UserTableName="accountdetails" msprop:Generator_RowChangedName="accountdetailsRowChanged" msprop:Generator_RowEvArgName="accountdetailsRowChangeEvent" msprop:Generator_RowClassName="accountdetailsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TDetailNo" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTDetailNo" msprop:Generator_ColumnPropNameInRow="TDetailNo" msprop:Generator_ColumnPropNameInTable="TDetailNoColumn" msprop:Generator_UserColumnName="TDetailNo" type="xs:int" />

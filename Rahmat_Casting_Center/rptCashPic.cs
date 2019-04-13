@@ -39,10 +39,10 @@ namespace Rahmat_Casting_Center
             {
                 if (find == "")
                 {
-                    SQLConn.sqL = "SELECT TDetailNo, AccountID,Name,SerialNo,DateIN,TimeIN,image,image1 from caccountdetails where DateIN BETWEEN '" + StartDate.ToString("MM-dd-yyyy") + "' AND '" + EndDate.ToString("MM-dd-yyyy") + "'   GROUP BY TDetailNo,AccountID ORDER BY DateIN";
+                    SQLConn.sqL = "SELECT TDetailNo, AccountID,Name,SerialNo,DateIN,TimeIN,image,image1 from caccountdetails where DATE_FORMAT(STR_TO_DATE(DateIN, '%m-%d-%Y'), '%Y-%m-%d') BETWEEN '" + StartDate.ToString("yyyy-MM-dd") + "' AND '" + EndDate.ToString("yyyy-MM-dd") + "'   GROUP BY TDetailNo,AccountID ORDER BY DateIN";
                 }
                 else {
-                    SQLConn.sqL = "SELECT TDetailNo, AccountID,Name,SerialNo,DateIN,TimeIN,image,image1 from caccountdetails where AccountId='"+find+"' AND DateIN BETWEEN '" + StartDate.ToString("MM-dd-yyyy") + "' AND '" + EndDate.ToString("MM-dd-yyyy") + "'   GROUP BY TDetailNo,AccountID ORDER BY DateIN";
+                    SQLConn.sqL = "SELECT TDetailNo, AccountID,Name,SerialNo,DateIN,TimeIN,image,image1 from caccountdetails where AccountId='"+find+ "' AND DATE_FORMAT(STR_TO_DATE(DateIN, '%m-%d-%Y'), '%Y-%m-%d') BETWEEN '" + StartDate.ToString("yyyy-MM-dd") + "' AND '" + EndDate.ToString("yyyy-MM-dd") + "'   GROUP BY TDetailNo,AccountID ORDER BY DateIN";
 
                 }
                 SQLConn.ConnDB();

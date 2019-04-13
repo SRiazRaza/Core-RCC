@@ -30,13 +30,13 @@ namespace Rahmat_Casting_Center
             {
 
                 frmReportSAccount rs = new frmReportSAccount(dtpStartDate.Value, dtpEndDate.Value,find.Text);
-                rs.Show();
+                rs.ShowDialog();
             }
 
             if (rbStocksOut.Checked == true)
             {
                 rptCashDetail rs = new rptCashDetail(dtpStartDate.Value , dtpEndDate.Value , find.Text);
-                rs.Show();
+                rs.ShowDialog();
 
             }
             if (rbimages.Checked == true)

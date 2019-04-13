@@ -33,10 +33,7 @@ namespace Rahmat_Casting_Center
             {
                 button2.Enabled = false;
             }
-            else
-            {
-
-            }
+          
 
 
         }
@@ -55,8 +52,8 @@ namespace Rahmat_Casting_Center
              xyz = CameraControl.GetDevices().LastOrDefault();
             if (abc != xyz)
             {
-                cameraControl2.Device = new CameraDevice(abc);
-                cameraControl2.Start();
+                ArticleCamera.Device = new CameraDevice(abc);
+                ArticleCamera.Start();
                
                 cameraControl1.Device = new CameraDevice(xyz);
                 cameraControl1.Start();
@@ -65,7 +62,7 @@ namespace Rahmat_Casting_Center
             else
             {
                 cameraControl1.Start();
-                cameraControl2.Start();
+                ArticleCamera.Start();
 
             }
 
@@ -191,7 +188,7 @@ namespace Rahmat_Casting_Center
                     pictureBox2.Image = Rahmat_Casting_Center.Properties.Resources.index;
 
                     pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-
+              
                 }
                 else
                 {
@@ -305,7 +302,7 @@ namespace Rahmat_Casting_Center
         void callStop() {
 
             cameraControl1.Stop();
-            cameraControl2.Stop();
+            ArticleCamera.Stop();
             this.Close();
         }
 
@@ -326,7 +323,7 @@ namespace Rahmat_Casting_Center
                 button2.PerformClick();
             }
 
-            else if (e.KeyCode == Keys.NumPad4 || e.KeyCode == Keys.Escape)
+            else if (e.KeyCode == Keys.NumPad4)
             {
                 button3.PerformClick();
             }
@@ -336,7 +333,7 @@ namespace Rahmat_Casting_Center
         {
             try
             {
-                if (cameraControl2.Device.IsRunning == false)
+                if (ArticleCamera.Device.IsRunning == false)
                 {
                     pictureBox4.Image = Rahmat_Casting_Center.Properties.Resources.index;
                     pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
@@ -344,11 +341,12 @@ namespace Rahmat_Casting_Center
                 }
                 else
                 {
-                    Image capI = cameraControl2.TakeSnapshot();
-                    if (capI != null)
+                    Image captureIma = ArticleCamera.TakeSnapshot();
+                    if (captureIma != null)
                     {
-                        Bitmap omap = new Bitmap(capI, new Size(270, 200));
-                        pictureBox4.Image = omap;
+                        Bitmap oomap = new Bitmap(captureIma, new Size(270, 200));
+                        pictureBox4.Image = oomap;
+                        this.Focus();
                     }
                     else
                     {
