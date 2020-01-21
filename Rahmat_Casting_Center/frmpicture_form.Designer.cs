@@ -110,16 +110,17 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.Control;
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.button3);
             this.panel4.Controls.Add(this.button4);
-            this.panel4.Location = new System.Drawing.Point(676, 1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(677, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(260, 486);
+            this.panel4.Size = new System.Drawing.Size(260, 487);
             this.panel4.TabIndex = 91;
             // 
             // label3
@@ -135,7 +136,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.ArticleCamera);
             this.panel1.Controls.Add(this.cameraControl1);
@@ -143,9 +144,10 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Location = new System.Drawing.Point(3, 1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(667, 486);
+            this.panel1.Size = new System.Drawing.Size(677, 487);
             this.panel1.TabIndex = 92;
             // 
             // ArticleCamera
@@ -219,7 +221,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "frmpicture_form";

@@ -11,7 +11,6 @@ using System.Threading;
 using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
 using System.IO;
-
 using DevExpress.Data.Camera;
 using DevExpress.XtraEditors.Camera;
 namespace Rahmat_Casting_Center
@@ -21,8 +20,8 @@ namespace Rahmat_Casting_Center
         string acc;
         string ser;
         string ans;
-        CameraDeviceInfo abc;
-             CameraDeviceInfo xyz;
+        CameraDeviceInfo abc=null;
+        CameraDeviceInfo xyz=null;
         public frmpicture_form(String accountid, String serial, String a)
         {
             InitializeComponent();

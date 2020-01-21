@@ -159,7 +159,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.SystemColors.Control;
+            this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.label31);
             this.panel5.Controls.Add(this.button4);
@@ -264,7 +264,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.SystemColors.Control;
+            this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.la4);
             this.panel6.Controls.Add(this.la5);
@@ -410,6 +410,7 @@
             this.textBox17.TextChanged += new System.EventHandler(this.textBox17_TextChanged);
             this.textBox17.Enter += new System.EventHandler(this.textBox17_Enter);
             this.textBox17.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox17_KeyDown);
+            this.textBox17.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox17_KeyPress);
             this.textBox17.Leave += new System.EventHandler(this.textBox17_Leave);
             // 
             // label14
@@ -470,6 +471,7 @@
             this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             this.textBox12.Enter += new System.EventHandler(this.textBox12_Enter);
             this.textBox12.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox12_KeyDown);
+            this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox12_KeyPress);
             this.textBox12.Leave += new System.EventHandler(this.textBox12_Leave);
             // 
             // textBox16
@@ -632,6 +634,7 @@
             this.textBox21.TextChanged += new System.EventHandler(this.textBox21_TextChanged);
             this.textBox21.Enter += new System.EventHandler(this.textBox21_Enter);
             this.textBox21.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox21_KeyDown);
+            this.textBox21.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox21_KeyPress);
             this.textBox21.Leave += new System.EventHandler(this.textBox21_Leave);
             // 
             // label29
@@ -684,6 +687,7 @@
             this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             this.textBox8.Enter += new System.EventHandler(this.textBox8_Enter);
             this.textBox8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox8_KeyDown);
+            this.textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox8_KeyPress);
             this.textBox8.Leave += new System.EventHandler(this.textBox8_Leave);
             // 
             // label12
@@ -759,6 +763,7 @@
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             this.textBox5.Enter += new System.EventHandler(this.textBox5_Enter);
             this.textBox5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox5_KeyDown);
+            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
             this.textBox5.Leave += new System.EventHandler(this.textBox5_Leave);
             // 
             // label9
@@ -808,6 +813,7 @@
             this.textBox3.Text = "0";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyDown);
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // label7
             // 
@@ -846,7 +852,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.Control;
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.panel7);
@@ -990,7 +996,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label5);
@@ -1050,7 +1056,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "frmBill";

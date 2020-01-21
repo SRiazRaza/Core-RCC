@@ -136,9 +136,10 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(-1, 0);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(884, 92);
+            this.panel2.Size = new System.Drawing.Size(883, 92);
             this.panel2.TabIndex = 36;
             // 
             // label1
@@ -163,12 +164,14 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.ListView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ListView1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListView1.FullRowSelect = true;
             this.ListView1.GridLines = true;
-            this.ListView1.Location = new System.Drawing.Point(-1, 183);
+            this.ListView1.HideSelection = false;
+            this.ListView1.Location = new System.Drawing.Point(0, 183);
             this.ListView1.Name = "ListView1";
-            this.ListView1.Size = new System.Drawing.Size(884, 372);
+            this.ListView1.Size = new System.Drawing.Size(883, 372);
             this.ListView1.TabIndex = 35;
             this.ListView1.UseCompatibleStateImageBehavior = false;
             this.ListView1.View = System.Windows.Forms.View.Details;
@@ -214,10 +217,11 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(-1, 98);
+            this.groupBox1.Location = new System.Drawing.Point(0, 92);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(884, 79);
+            this.groupBox1.Size = new System.Drawing.Size(883, 91);
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Actions";
@@ -229,10 +233,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(883, 555);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ListView1);
-            this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "frmC_Account";

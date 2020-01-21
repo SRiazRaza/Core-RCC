@@ -265,5 +265,12 @@ namespace Rahmat_Casting_Center
             //textBox1.Text = Strings.Format(Conversion.Val(textBox1.Text.Replace(",", "") ), "#,###0.000");
 
         }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46) { e.Handled = true; }
+
+        }
     }
 }

@@ -414,36 +414,44 @@ namespace Rahmat_Casting_Center
 
         private void settle_b_Click(object sender, EventArgs e)
         {
-            if (label22.Text != "")
+            try
             {
-                if (checkBox1.Checked == false) //
+                if (label22.Text != "")
                 {
-                    insert_accountdetails(); //inserting bill info for each
-                    insert_account();        // inserting account transactions personal
+                    if (checkBox1.Checked == false) //
+                    {
+                        insert_accountdetails(); //inserting bill info for each
+                        insert_account();        // inserting account transactions personal
 
-                    frmpicture_form picForm = new frmpicture_form(textBox1.Text, label22.Text, "Single");
-                    picForm.ShowDialog();
+                        frmpicture_form picForm = new frmpicture_form(textBox1.Text, label22.Text, "Single");
+                        picForm.ShowDialog();
 
-                    frmPrint xyz = new frmPrint(textBox1.Text, label22.Text, "Single");
-                    xyz.ShowDialog();
+                        frmPrint xyz = new frmPrint(textBox1.Text, label22.Text, "Single");
+                        xyz.ShowDialog();
+                    }
+
+                    else
+                    {
+                        insert_Caccounts();
+
+                        frmpicture_form picForm = new frmpicture_form(textBox1.Text, label22.Text, "Cash");
+                        picForm.ShowDialog();
+
+                        frmPrint xyz = new frmPrint(textBox1.Text, label22.Text, "Cash");
+                        xyz.ShowDialog();
+
+                    }
                 }
-
                 else
                 {
-                    insert_Caccounts();
-
-                    frmpicture_form picForm = new frmpicture_form(textBox1.Text, label22.Text, "Cash");
-                    picForm.ShowDialog();
-
-                    frmPrint xyz = new frmPrint(textBox1.Text, label22.Text, "Cash");
-                    xyz.ShowDialog();
-
+                    return;
                 }
             }
-            else {
-                return;
-            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message.ToString());
 
+
+            }
 
         }
         public void SetFocusonExit() {
@@ -1004,6 +1012,48 @@ namespace Rahmat_Casting_Center
         {
             frmRePrint abc = new frmRePrint();
             abc.ShowDialog();
+        }
+
+        private void textBox17_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46) { e.Handled = true; }
+
+        }
+
+        private void textBox12_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46) { e.Handled = true; }
+
+        }
+
+        private void textBox21_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46) { e.Handled = true; }
+
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46) { e.Handled = true; }
+
+        }
+
+        private void textBox8_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46) { e.Handled = true; }
+
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46) { e.Handled = true; }
+
         }
     }
 }

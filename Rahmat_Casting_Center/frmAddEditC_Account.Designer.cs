@@ -38,13 +38,13 @@
             this.txDesc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txRati = new System.Windows.Forms.TextBox();
-            this.GroupBox2 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.lblNo = new System.Windows.Forms.Label();
             this.txt_Name = new System.Windows.Forms.TextBox();
             this.Label3 = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
+            this.GroupBox2 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -69,7 +69,7 @@
             this.txt_labour.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_labour.Location = new System.Drawing.Point(516, 149);
             this.txt_labour.Name = "txt_labour";
-            this.txt_labour.Size = new System.Drawing.Size(123, 24);
+            this.txt_labour.Size = new System.Drawing.Size(165, 24);
             this.txt_labour.TabIndex = 3;
             // 
             // txt_waist
@@ -77,8 +77,9 @@
             this.txt_waist.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_waist.Location = new System.Drawing.Point(124, 145);
             this.txt_waist.Name = "txt_waist";
-            this.txt_waist.Size = new System.Drawing.Size(123, 24);
+            this.txt_waist.Size = new System.Drawing.Size(165, 24);
             this.txt_waist.TabIndex = 2;
+            this.txt_waist.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_waist_KeyPress);
             // 
             // label9
             // 
@@ -97,7 +98,6 @@
             this.GroupBox1.Controls.Add(this.txDesc);
             this.GroupBox1.Controls.Add(this.label2);
             this.GroupBox1.Controls.Add(this.txRati);
-            this.GroupBox1.Controls.Add(this.GroupBox2);
             this.GroupBox1.Controls.Add(this.lblNo);
             this.GroupBox1.Controls.Add(this.txt_Name);
             this.GroupBox1.Controls.Add(this.label20);
@@ -106,10 +106,11 @@
             this.GroupBox1.Controls.Add(this.label9);
             this.GroupBox1.Controls.Add(this.txt_waist);
             this.GroupBox1.Controls.Add(this.Label6);
+            this.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GroupBox1.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBox1.Location = new System.Drawing.Point(1, 96);
+            this.GroupBox1.Location = new System.Drawing.Point(0, 91);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(761, 468);
+            this.GroupBox1.Size = new System.Drawing.Size(761, 381);
             this.GroupBox1.TabIndex = 15;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Account Information";
@@ -149,54 +150,8 @@
             this.txRati.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txRati.Location = new System.Drawing.Point(124, 212);
             this.txRati.Name = "txRati";
-            this.txRati.Size = new System.Drawing.Size(123, 24);
+            this.txRati.Size = new System.Drawing.Size(165, 24);
             this.txRati.TabIndex = 4;
-            // 
-            // GroupBox2
-            // 
-            this.GroupBox2.Controls.Add(this.button4);
-            this.GroupBox2.Controls.Add(this.button3);
-            this.GroupBox2.Location = new System.Drawing.Point(0, 377);
-            this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(761, 91);
-            this.GroupBox2.TabIndex = 8;
-            this.GroupBox2.TabStop = false;
-            this.GroupBox2.Text = "  ";
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Constantia", 11.25F);
-            this.button4.Location = new System.Drawing.Point(619, 36);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 32);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "&Cancel";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Constantia", 11.25F);
-            this.button3.Location = new System.Drawing.Point(491, 36);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 32);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "&Save";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // lblNo
             // 
@@ -238,6 +193,54 @@
             this.Label6.TabIndex = 3;
             this.Label6.Text = "Account No :";
             // 
+            // GroupBox2
+            // 
+            this.GroupBox2.BackColor = System.Drawing.Color.White;
+            this.GroupBox2.Controls.Add(this.button4);
+            this.GroupBox2.Controls.Add(this.button3);
+            this.GroupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.GroupBox2.Location = new System.Drawing.Point(0, 472);
+            this.GroupBox2.Name = "GroupBox2";
+            this.GroupBox2.Size = new System.Drawing.Size(761, 91);
+            this.GroupBox2.TabIndex = 8;
+            this.GroupBox2.TabStop = false;
+            this.GroupBox2.Text = "  ";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Constantia", 11.25F);
+            this.button4.Location = new System.Drawing.Point(619, 36);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(90, 32);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "&Cancel";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Constantia", 11.25F);
+            this.button3.Location = new System.Drawing.Point(491, 36);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(90, 32);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "&Save";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -265,9 +268,10 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.lblTitle);
-            this.panel2.Location = new System.Drawing.Point(1, 0);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(878, 97);
+            this.panel2.Size = new System.Drawing.Size(761, 91);
             this.panel2.TabIndex = 14;
             // 
             // frmAddEditC_Account
@@ -279,7 +283,8 @@
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.panel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Controls.Add(this.GroupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAddEditC_Account";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

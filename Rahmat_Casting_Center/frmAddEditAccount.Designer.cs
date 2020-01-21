@@ -61,11 +61,13 @@
             this.txt_labour = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_waist = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.GroupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.GroupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Label14
@@ -128,7 +130,7 @@
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Constantia", 11.25F);
-            this.button4.Location = new System.Drawing.Point(702, 22);
+            this.button4.Location = new System.Drawing.Point(623, 37);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(90, 32);
             this.button4.TabIndex = 13;
@@ -197,7 +199,7 @@
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Constantia", 11.25F);
-            this.button3.Location = new System.Drawing.Point(574, 22);
+            this.button3.Location = new System.Drawing.Point(527, 37);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 32);
             this.button3.TabIndex = 12;
@@ -219,9 +221,10 @@
             // 
             this.GroupBox2.Controls.Add(this.button4);
             this.GroupBox2.Controls.Add(this.button3);
-            this.GroupBox2.Location = new System.Drawing.Point(0, 491);
+            this.GroupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.GroupBox2.Location = new System.Drawing.Point(0, 400);
             this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(854, 81);
+            this.GroupBox2.Size = new System.Drawing.Size(725, 81);
             this.GroupBox2.TabIndex = 10;
             this.GroupBox2.TabStop = false;
             // 
@@ -241,9 +244,10 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.lblTitle);
-            this.panel2.Location = new System.Drawing.Point(-1, 0);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(878, 69);
+            this.panel2.Size = new System.Drawing.Size(725, 69);
             this.panel2.TabIndex = 12;
             // 
             // pictureBox2
@@ -273,9 +277,7 @@
             this.GroupBox1.Controls.Add(this.txtShopNo);
             this.GroupBox1.Controls.Add(this.txtContractNo);
             this.GroupBox1.Controls.Add(this.label1);
-            this.GroupBox1.Controls.Add(this.groupBox3);
             this.GroupBox1.Controls.Add(this.Label15);
-            this.GroupBox1.Controls.Add(this.GroupBox2);
             this.GroupBox1.Controls.Add(this.Label14);
             this.GroupBox1.Controls.Add(this.Label11);
             this.GroupBox1.Controls.Add(this.Label10);
@@ -288,10 +290,11 @@
             this.GroupBox1.Controls.Add(this.txtLastname);
             this.GroupBox1.Controls.Add(this.Label3);
             this.GroupBox1.Controls.Add(this.Label6);
+            this.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.GroupBox1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBox1.Location = new System.Drawing.Point(12, 75);
+            this.GroupBox1.Location = new System.Drawing.Point(0, 0);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(854, 575);
+            this.GroupBox1.Size = new System.Drawing.Size(725, 247);
             this.GroupBox1.TabIndex = 13;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Account Information";
@@ -337,10 +340,11 @@
             this.groupBox3.Controls.Add(this.txt_labour);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.txt_waist);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(0, 249);
+            this.groupBox3.Location = new System.Drawing.Point(0, 247);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(854, 236);
+            this.groupBox3.Size = new System.Drawing.Size(725, 153);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Account Finances";
@@ -349,7 +353,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(391, 80);
+            this.label5.Location = new System.Drawing.Point(391, 52);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(149, 17);
             this.label5.TabIndex = 32;
@@ -357,17 +361,18 @@
             // 
             // txt_money
             // 
-            this.txt_money.Location = new System.Drawing.Point(559, 106);
+            this.txt_money.Location = new System.Drawing.Point(559, 78);
             this.txt_money.Name = "txt_money";
             this.txt_money.Size = new System.Drawing.Size(105, 23);
             this.txt_money.TabIndex = 11;
             this.txt_money.Text = "0";
+            this.txt_money.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_money_KeyPress);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(391, 112);
+            this.label7.Location = new System.Drawing.Point(391, 84);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(162, 17);
             this.label7.TabIndex = 30;
@@ -375,17 +380,18 @@
             // 
             // txt_gold
             // 
-            this.txt_gold.Location = new System.Drawing.Point(559, 77);
+            this.txt_gold.Location = new System.Drawing.Point(559, 49);
             this.txt_gold.Name = "txt_gold";
             this.txt_gold.Size = new System.Drawing.Size(105, 23);
             this.txt_gold.TabIndex = 10;
             this.txt_gold.Text = "0.000";
+            this.txt_gold.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_gold_KeyPress);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(16, 83);
+            this.label20.Location = new System.Drawing.Point(16, 55);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(58, 17);
             this.label20.TabIndex = 28;
@@ -393,17 +399,18 @@
             // 
             // txt_labour
             // 
-            this.txt_labour.Location = new System.Drawing.Point(141, 109);
+            this.txt_labour.Location = new System.Drawing.Point(141, 81);
             this.txt_labour.Name = "txt_labour";
             this.txt_labour.Size = new System.Drawing.Size(123, 23);
             this.txt_labour.TabIndex = 9;
             this.txt_labour.Text = "0";
+            this.txt_labour.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_labour_KeyPress);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(16, 115);
+            this.label9.Location = new System.Drawing.Point(16, 87);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 17);
             this.label9.TabIndex = 26;
@@ -411,11 +418,23 @@
             // 
             // txt_waist
             // 
-            this.txt_waist.Location = new System.Drawing.Point(141, 80);
+            this.txt_waist.Location = new System.Drawing.Point(141, 52);
             this.txt_waist.Name = "txt_waist";
             this.txt_waist.Size = new System.Drawing.Size(123, 23);
             this.txt_waist.TabIndex = 8;
             this.txt_waist.Text = "0.000";
+            this.txt_waist.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_waist_KeyPress);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox3);
+            this.panel1.Controls.Add(this.GroupBox1);
+            this.panel1.Controls.Add(this.GroupBox2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 69);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(725, 481);
+            this.panel1.TabIndex = 14;
             // 
             // frmAddEditAccount
             // 
@@ -423,11 +442,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CancelButton = this.button4;
-            this.ClientSize = new System.Drawing.Size(868, 652);
+            this.ClientSize = new System.Drawing.Size(725, 550);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.GroupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAddEditAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -440,6 +459,7 @@
             this.GroupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -478,5 +498,6 @@
         private System.Windows.Forms.TextBox txt_gold;
         private System.Windows.Forms.MaskedTextBox txtContractNo;
         private System.Windows.Forms.MaskedTextBox txtShopNo;
+        private System.Windows.Forms.Panel panel1;
     }
 }

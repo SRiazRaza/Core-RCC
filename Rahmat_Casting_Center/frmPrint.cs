@@ -223,6 +223,7 @@ namespace Rahmat_Casting_Center
 
         private void frmPrint_Load(object sender, EventArgs e)
         {
+            ChangeFont();
             printing = false;
 
             label25.Text = "";
@@ -246,6 +247,14 @@ namespace Rahmat_Casting_Center
             }
             this.Close();
         
+        }
+        private void ChangeFont() {
+
+           /* foreach (Label la in Controls)
+            {
+
+                la.Font = new Font("Georgia", 12);
+            }*/
         }
         public void GetMessage()
         {
@@ -287,9 +296,7 @@ namespace Rahmat_Casting_Center
             aPS.Document = PrintDocument1;
         }
 
-        private void lblTime_Click(object sender, EventArgs e)
-        {
 
-        }
+      
     }
 }

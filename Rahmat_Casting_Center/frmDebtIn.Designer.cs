@@ -78,9 +78,10 @@
             // 
             this.GroupBox2.Controls.Add(this.button4);
             this.GroupBox2.Controls.Add(this.button3);
-            this.GroupBox2.Location = new System.Drawing.Point(5, 389);
+            this.GroupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.GroupBox2.Location = new System.Drawing.Point(0, 397);
             this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(647, 90);
+            this.GroupBox2.Size = new System.Drawing.Size(664, 90);
             this.GroupBox2.TabIndex = 17;
             this.GroupBox2.TabStop = false;
             // 
@@ -111,6 +112,7 @@
             this.txtGold_Debt.Size = new System.Drawing.Size(137, 24);
             this.txtGold_Debt.TabIndex = 0;
             this.txtGold_Debt.TextChanged += new System.EventHandler(this.txtGold_Debt_TextChanged);
+            this.txtGold_Debt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGold_Debt_KeyPress);
             // 
             // txtTotalGoldDebt
             // 
@@ -212,9 +214,10 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.lblTitle);
-            this.panel2.Location = new System.Drawing.Point(-3, 0);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(668, 78);
+            this.panel2.Size = new System.Drawing.Size(664, 78);
             this.panel2.TabIndex = 15;
             // 
             // pictureBox2
@@ -255,10 +258,11 @@
             this.GroupBox1.Controls.Add(this.Label4);
             this.GroupBox1.Controls.Add(this.lblName);
             this.GroupBox1.Controls.Add(this.Label1);
+            this.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GroupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBox1.Location = new System.Drawing.Point(10, 84);
+            this.GroupBox1.Location = new System.Drawing.Point(0, 78);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(642, 299);
+            this.GroupBox1.Size = new System.Drawing.Size(664, 319);
             this.GroupBox1.TabIndex = 16;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Debt-In Information";
@@ -272,6 +276,7 @@
             this.txtMoney_Debt.Size = new System.Drawing.Size(137, 24);
             this.txtMoney_Debt.TabIndex = 4;
             this.txtMoney_Debt.TextChanged += new System.EventHandler(this.txtMoney_Debt_TextChanged);
+            this.txtMoney_Debt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMoney_Debt_KeyPress);
             // 
             // txtTotalMoneyDebt
             // 
@@ -313,10 +318,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(664, 487);
             this.ControlBox = false;
+            this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.GroupBox2);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.GroupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDebtIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

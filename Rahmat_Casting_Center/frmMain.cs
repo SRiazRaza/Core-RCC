@@ -26,6 +26,7 @@ namespace Rahmat_Casting_Center
         private void frmMain_Load(object sender, EventArgs e)
         {
             SQLConn.getData();
+            this.Focus();
 
         }
         void load_chart()
@@ -151,6 +152,11 @@ namespace Rahmat_Casting_Center
         {
             frmAbout abc = new frmAbout();
             abc.ShowDialog();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

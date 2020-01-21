@@ -12,7 +12,7 @@ namespace Rahmat_Casting_Center.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -30,6 +30,18 @@ namespace Rahmat_Casting_Center.Properties {
         public string rahmat_casting_centerConnectionstring {
             get {
                 return ((string)(this["rahmat_casting_centerConnectionstring"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Times New Roman, 12pt")]
+        public global::System.Drawing.Font bill_font {
+            get {
+                return ((global::System.Drawing.Font)(this["bill_font"]));
+            }
+            set {
+                this["bill_font"] = value;
             }
         }
     }

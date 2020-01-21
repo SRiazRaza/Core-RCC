@@ -158,19 +158,31 @@ namespace Rahmat_Casting_Center
            
             textBox2.Text = "";
             textBox2.Text = "";
-
-
+            LoadFontInfo();
             GetCompanyInfo();
+            getFont();
+           
         }
-
+       
         private void picClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        private void getFont() {
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-         
+            Font f =Properties.Settings.Default.bill_font;
+            Font_Family.Text=f.OriginalFontName.ToString();
+            Font_Size.Text= f.SizeInPoints.ToString();
+
+
+
+        }
+        private void LoadFontInfo() {
+
+            foreach (FontFamily font in FontFamily.Families) {
+                Font_Family.Items.Add(font.Name.ToString());
+            }
+          
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -245,6 +257,29 @@ namespace Rahmat_Casting_Center
             {
                 MessageBox.Show("Restroring UnSuccessfull. " + ex);
             }
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            SaveData();
+
+         }
+        private void SaveData()
+        {
+            Font font1 = new Font(Font_Family.Text,Convert.ToInt32(Font_Size.Text));
+            Properties.Settings.Default["bill_font"] = font1;
+            Properties.Settings.Default.Save();
+            // Saves settings in application configuration file
+            Interaction.MsgBox("Information Successfully Added", MsgBoxStyle.Information, "Adding Information");
+
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46) { e.Handled = true; }
 
         }
 

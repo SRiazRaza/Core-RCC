@@ -60,7 +60,7 @@
             // 
             // GroupBox1
             // 
-            this.GroupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.GroupBox1.BackColor = System.Drawing.Color.White;
             this.GroupBox1.Controls.Add(this.cmdSave);
             this.GroupBox1.Controls.Add(this.txtServerHost);
             this.GroupBox1.Controls.Add(this.cmdClose);
@@ -74,22 +74,24 @@
             this.GroupBox1.Controls.Add(this.txtPassword);
             this.GroupBox1.Controls.Add(this.txtDatabase);
             this.GroupBox1.Controls.Add(this.Label1);
+            this.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GroupBox1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBox1.Location = new System.Drawing.Point(1, 62);
+            this.GroupBox1.Location = new System.Drawing.Point(0, 63);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(329, 242);
+            this.GroupBox1.Size = new System.Drawing.Size(348, 256);
             this.GroupBox1.TabIndex = 29;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Connect to MySQL Server";
             // 
             // cmdSave
             // 
-            this.cmdSave.BackColor = System.Drawing.SystemColors.Control;
+            this.cmdSave.BackColor = System.Drawing.Color.White;
             this.cmdSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmdSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.cmdSave.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.Highlight;
             this.cmdSave.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
             this.cmdSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdSave.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdSave.Location = new System.Drawing.Point(140, 189);
             this.cmdSave.Name = "cmdSave";
             this.cmdSave.Size = new System.Drawing.Size(89, 41);
@@ -108,13 +110,14 @@
             // 
             // cmdClose
             // 
-            this.cmdClose.BackColor = System.Drawing.SystemColors.Control;
+            this.cmdClose.BackColor = System.Drawing.Color.White;
             this.cmdClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmdClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cmdClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.cmdClose.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.Highlight;
             this.cmdClose.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
             this.cmdClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdClose.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdClose.Location = new System.Drawing.Point(235, 189);
             this.cmdClose.Name = "cmdClose";
             this.cmdClose.Size = new System.Drawing.Size(88, 41);
@@ -125,12 +128,13 @@
             // 
             // cmdTest
             // 
-            this.cmdTest.BackColor = System.Drawing.SystemColors.Control;
+            this.cmdTest.BackColor = System.Drawing.Color.White;
             this.cmdTest.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmdTest.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.cmdTest.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.Highlight;
             this.cmdTest.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
             this.cmdTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdTest.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdTest.Location = new System.Drawing.Point(38, 189);
             this.cmdTest.Name = "cmdTest";
             this.cmdTest.Size = new System.Drawing.Size(96, 41);
@@ -213,9 +217,10 @@
             this.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Panel1.Controls.Add(this.Label6);
-            this.Panel1.Location = new System.Drawing.Point(-29, -7);
+            this.Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Panel1.Location = new System.Drawing.Point(0, 0);
             this.Panel1.Name = "Panel1";
-            this.Panel1.Size = new System.Drawing.Size(388, 63);
+            this.Panel1.Size = new System.Drawing.Size(348, 63);
             this.Panel1.TabIndex = 30;
             // 
             // Label6
@@ -233,12 +238,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.cmdClose;
             this.ClientSize = new System.Drawing.Size(348, 319);
             this.ControlBox = false;
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.Panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDataBaseConf";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

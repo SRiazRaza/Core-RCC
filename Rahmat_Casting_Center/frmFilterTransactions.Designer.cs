@@ -110,9 +110,10 @@
             // 
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 328);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Location = new System.Drawing.Point(0, 340);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(444, 77);
+            this.groupBox1.Size = new System.Drawing.Size(468, 77);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             // 
@@ -125,7 +126,7 @@
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Constantia", 10F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(52, 19);
+            this.button3.Location = new System.Drawing.Point(130, 19);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(115, 42);
             this.button3.TabIndex = 15;
@@ -147,9 +148,10 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.panel2.Controls.Add(this.lblTitle);
-            this.panel2.Location = new System.Drawing.Point(-2, -2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(472, 77);
+            this.panel2.Size = new System.Drawing.Size(468, 77);
             this.panel2.TabIndex = 53;
             // 
             // lblTitle
@@ -177,10 +179,11 @@
             this.GroupBox3.Controls.Add(this.dtpEndDate);
             this.GroupBox3.Controls.Add(this.label1);
             this.GroupBox3.Controls.Add(this.Label5);
+            this.GroupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GroupBox3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBox3.Location = new System.Drawing.Point(12, 81);
+            this.GroupBox3.Location = new System.Drawing.Point(0, 77);
             this.GroupBox3.Name = "GroupBox3";
-            this.GroupBox3.Size = new System.Drawing.Size(444, 241);
+            this.GroupBox3.Size = new System.Drawing.Size(468, 263);
             this.GroupBox3.TabIndex = 52;
             this.GroupBox3.TabStop = false;
             this.GroupBox3.Text = "Filter By";
@@ -282,10 +285,10 @@
             this.CancelButton = this.button4;
             this.ClientSize = new System.Drawing.Size(468, 417);
             this.ControlBox = false;
+            this.Controls.Add(this.GroupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.GroupBox3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmFilterTransactions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

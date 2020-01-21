@@ -253,5 +253,33 @@ namespace Rahmat_Casting_Center
         {
 
         }
+
+        private void txt_waist_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46) { e.Handled = true; }
+
+        }
+
+        private void txt_labour_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46) { e.Handled = true; }
+
+        }
+
+        private void txt_gold_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46) { e.Handled = true; }
+
+        }
+
+        private void txt_money_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46) { e.Handled = true; }
+
+        }
     }
 }

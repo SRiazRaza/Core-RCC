@@ -78,7 +78,6 @@ namespace Rahmat_Casting_Center
 		public static void SaveData()
 		{
 			string AppName = Application.ProductName;
-
 			Interaction.SaveSetting(AppName, "DBSection", "DB_Name", DBNameMySQL);
 			Interaction.SaveSetting(AppName, "DBSection", "DB_IP", ServerMySQL);
 			Interaction.SaveSetting(AppName, "DBSection", "DB_Port", PortMySQL);
