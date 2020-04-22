@@ -300,7 +300,7 @@ namespace Rahmat_Casting_Center
             else {
                 try
                 {
-                    //Waist
+                    //<<<<<<<<<<<<<<<|||||||||Waist|||||||>>>>>>>>>>>>>>>>>>>>>>>
                     // Lines after changing 0.003
                     double chng = Convert.ToDouble(waist) * Convert.ToDouble(textBox17.Text);
                     chng = chng + 0.003; // Custom value changing
@@ -310,7 +310,7 @@ namespace Rahmat_Casting_Center
                     d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
                     textBox16.Text = d.ToString() + "0";
 
-                    //Total
+                    //<<<<<<<<<<<<<<<<<<<<<|||||||Total|||||||>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                     ds = Strings.Format(Convert.ToDouble(textBox16.Text) + Convert.ToDouble(textBox17.Text), "#,###0.000");
                     d = Convert.ToDecimal(ds);
                     d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
@@ -323,7 +323,7 @@ namespace Rahmat_Casting_Center
                        textBox11.Text = d.ToString() + "0";
                        */
 
-                    //Pure Gold
+                    //<<<<<<<<<<<<<<<<<<<<<||||Pure Gold|||||>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                     // Changing value here 0.003
                     int minim = 96;
                     minim = minim - Convert.ToInt16(textBox3.Text);
@@ -336,7 +336,7 @@ namespace Rahmat_Casting_Center
                     d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58
                     textBox13.Text = d.ToString() + "0";
 
-                    //Impurity
+                    //<<<<<<<<<<<<<<<<<<<<<<|||Impurity|||>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                     ds = Strings.Format(Convert.ToDouble(textBox15.Text) - Convert.ToDouble(textBox13.Text), "#,###0.000");
                     d = Convert.ToDecimal(ds);
                     d = decimal.Round(d, 2, MidpointRounding.AwayFromZero); //2.58

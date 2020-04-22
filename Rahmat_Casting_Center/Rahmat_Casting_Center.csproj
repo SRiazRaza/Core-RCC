@@ -324,7 +324,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="rptDebtIn.rdlc" />
+    <EmbeddedResource Include="rptDebtIn.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptCashPic.rdlc" />
     <EmbeddedResource Include="rptCashPic.resx">
       <DependentUpon>rptCashPic.cs</DependentUpon>
