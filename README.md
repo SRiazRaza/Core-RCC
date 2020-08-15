@@ -1,6 +1,6 @@
 # Core-RCC
-This repository logs and calculate all possible computation for Castings Center.
-# Prerequisites Required
+This repository logs and calculate all possible computation for Smart RCC Application.
+Prerequisites Required
 The Prerequisite application required to run this program are:
 1. Visual Studio 2015. 
 2. MySQL Workbench. 
